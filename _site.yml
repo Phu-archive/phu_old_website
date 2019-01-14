@@ -1,0 +1,12 @@
+name: "phutoast.github.io"
+title: "Phu Website"
+description: |
+  Phu Website
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: radix::radix_article
