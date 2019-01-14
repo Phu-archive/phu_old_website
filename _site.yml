@@ -2,7 +2,7 @@ name: "phutoast.github.io"
 title: "Phu Website"
 description: |
   Phu Website
-output_dir: "_site"
+output_dir: "."
 navbar:
   right:
     - text: "Home"
