@@ -1,5 +1,7 @@
 ---
-title: "My Blog"
+title: "Phu's Machine Learning and Deep Learning Blog"
 site: radix::radix_website
-listing: posts
+listing: 
+  posts:
+    - welcome
 ---

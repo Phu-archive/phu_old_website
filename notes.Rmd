@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ### Deep Reinforcement Learning 
-Deep Reinforcement Learning course offers at ABC university 
+Deep Reinforcement Learning course offers at ABC university: [Here](DeepRL.html)
 
 
 ### Deep Learning 

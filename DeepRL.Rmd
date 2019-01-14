@@ -1,0 +1,7 @@
+---
+title: "Deep Reinforcement Learning"
+site: radix::radix_website
+listing: 
+  posts:
+    - 2019-01-14-deep-rl-lecture-1
+---
