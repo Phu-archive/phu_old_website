@@ -11,6 +11,8 @@ navbar:
       href: about.html
     - text: "Notes"
       href: notes.html
+    - text: "Blogs"
+      href: blog.html
     - text: "CV"
       href: CV.pdf
     - icon: fab fa-github

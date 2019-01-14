@@ -1,7 +1,7 @@
 ---
 title: "Notes"
 description: |
-  List of all Lecture Notes for all Courses I have taken Online 😎
+  List of all Lecture Notes for all Courses I have taken Online .
 date: "`r Sys.Date()`"
 output: radix::radix_article
 ---
