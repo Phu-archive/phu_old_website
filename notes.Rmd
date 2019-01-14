@@ -1,7 +1,7 @@
 ---
 title: "Notes"
 description: |
-  List of all Lecture Notes for all Courses I have taken Online .
+  List of all Lecture Notes for all Courses I have taken Online . 😎
 date: "`r Sys.Date()`"
 output: radix::radix_article
 ---
@@ -14,22 +14,14 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ### Deep Reinforcement Learning 
-Deep Reinforcement Learning course offers at ABC university: [Here](DeepRL.html)
-
-
-### Deep Learning 
-Deep Learning offers at ABC university 
+Deep Reinforcement Learning course([CS 294](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/index.html)) offers at UC Berkeley: [Note](DeepRL.html). 
 
 
 ## Mathematics 
 
 
-### Game Theory
-Game Theory offers at ABC university 
-
-
 ### Geometrical Anatomy of Theoretical Physics 
-Geometrical Anatomy of Theoretical Physics by Fredric Schuller
+Geometrical Anatomy of Theoretical Physics by [Fredric Schuller](https://www.youtube.com/playlist?list=PLPH7f_7ZlzxTi6kS4vCmv4ZKm9u8g5yic): [Note](GeoPhy.html)
 
 
 

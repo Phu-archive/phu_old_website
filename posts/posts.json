@@ -15,6 +15,21 @@
     "last_modified": "2019-01-14T11:49:44+00:00"
   },
   {
+    "path": "posts/2019-01-14-geo-phy-lecture-1/",
+    "title": "Geometrical Anatomy of Theoretical Physics Lecture 1",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Nora Jones",
+        "url": "https://example.com/norajones"
+      }
+    ],
+    "date": "2019-01-14",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-01-14T14:28:19+00:00"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to My Blog",
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
