@@ -3,6 +3,10 @@ title: "Phu's Website"
 description: |
   Phu Website
 output_dir: "."
+base_url: http://phutoast.github.io
+collections:
+  posts:
+    share: [twitter, linkedin, facebook]
 navbar:
   right:
     - text: "Home"

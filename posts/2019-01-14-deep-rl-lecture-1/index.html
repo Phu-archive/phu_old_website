@@ -23,6 +23,7 @@
 
 <meta property="description" itemprop="description" content="Supervised Learning and Decision Making"/>
 
+<link rel="canonical" href="http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2019-01-14"/>
@@ -33,14 +34,28 @@
 <meta property="og:title" content="Phu&#39;s Website: Deep Reinforcement Learning Lecture 1"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Supervised Learning and Decision Making"/>
+<meta property="og:url" content="http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/"/>
+<meta property="og:image" content="http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/Images/Figure1.png"/>
+<meta property="og:image:width" content="1096"/>
+<meta property="og:image:height" content="543"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Phu&#39;s Website"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Phu&#39;s Website: Deep Reinforcement Learning Lecture 1"/>
 <meta property="twitter:description" content="Supervised Learning and Decision Making"/>
+<meta property="twitter:url" content="http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/"/>
+<meta property="twitter:image" content="http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/Images/Figure1.png"/>
+<meta property="twitter:image:width" content="1096"/>
+<meta property="twitter:image:height" content="543"/>
 
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="Phu&#39;s Website: Deep Reinforcement Learning Lecture 1"/>
+<meta name="citation_fulltext_html_url" content="http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/"/>
+<meta name="citation_online_date" content="2019/01/14"/>
+<meta name="citation_publication_date" content="2019/01/14"/>
+<meta name="citation_author" content="Phu Sakulwongtana"/>
 <!--/radix_placeholder_meta_tags-->
   
   <meta name="citation_reference" content="citation_title=End to end learning for self-driving cars;citation_publication_date=2016;citation_volume=abs/1604.07316;citation_author=Mariusz Bojarski;citation_author=Davide Del Testa;citation_author=Daniel Dworakowski;citation_author=Bernhard Firner;citation_author=Beat Flepp;citation_author=Prasoon Goyal;citation_author=Lawrence D. Jackel;citation_author=Mathew Monfort;citation_author=Urs Muller;citation_author=Jiakai Zhang;citation_author=Xin Zhang;citation_author=Jake Zhao;citation_author=Karol Zieba"/>
@@ -51,7 +66,7 @@
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","bibliography","output"]}},"value":[{"type":"character","attributes":{},"value":["Deep Reinforcement Learning Lecture 1"]},{"type":"character","attributes":{},"value":["Supervised Learning and Decision Making"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["http://phutoast.github.io"]}]}]},{"type":"character","attributes":{},"value":["01-14-2019"]},{"type":"character","attributes":{},"value":["biblio.bib"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","bibliography","collections","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Deep Reinforcement Learning Lecture 1"]},{"type":"character","attributes":{},"value":["Supervised Learning and Decision Making"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["http://phutoast.github.io"]}]}]},{"type":"character","attributes":{},"value":["01-14-2019"]},{"type":"character","attributes":{},"value":["biblio.bib"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["share"]}},"value":[{"type":"character","attributes":{},"value":["twitter","linkedin"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"character","attributes":{},"value":["http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/"]},{"type":"character","attributes":{},"value":["http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1552,6 +1567,22 @@ c(x, u) = - \log p(u=\pi^*(x) | x)
 </div>
 </div>
 <!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=Deep%20Reinforcement%20Learning%20Lecture%201&amp;url=http%3A%2F%2Fphutoast.github.io%2Fposts%2F2019-01-14-deep-rl-lecture-1%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fphutoast.github.io%2Fposts%2F2019-01-14-deep-rl-lecture-1%2F&amp;title=Deep%20Reinforcement%20Learning%20Lecture%201">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=http%3A%2F%2Fphutoast.github.io%2Fposts%2F2019-01-14-deep-rl-lecture-1%2F">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </span>
+  </p>
+</div>
 <!--/radix_placeholder_article_footer-->
 </div>
 
@@ -1571,7 +1602,18 @@ c(x, u) = - \log p(u=\pi^*(x) | x)
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Sakulwongtana (2019, Jan. 14). Phu's Website: Deep Reinforcement Learning Lecture 1. Retrieved from http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{sakulwongtana2019deep,
+  author = {Sakulwongtana, Phu},
+  title = {Phu's Website: Deep Reinforcement Learning Lecture 1},
+  url = {http://phutoast.github.io/posts/2019-01-14-deep-rl-lecture-1/},
+  year = {2019}
+}</pre>
+</div>
 <script id="distill-bibliography" type="text/bibtex">
 @article{DBLP:journals/corr/BojarskiTDFFGJM16,
   author    = {Mariusz Bojarski and
