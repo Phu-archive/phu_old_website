@@ -1,5 +1,20 @@
 [
   {
+    "path": "posts/2019-01-14-geo-phy-lecture-1/",
+    "title": "Geometrical Anatomy of Theoretical Physics Lecture 1",
+    "description": "Logic, including Propositional Logic, Predicate Logic, Axiomatic System/Theory of Proofs",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-01-15",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-01-15T20:11:56+00:00"
+  },
+  {
     "path": "posts/2019-01-14-deep-rl-lecture-1/",
     "title": "Deep Reinforcement Learning Lecture 1",
     "description": "Supervised Learning and Decision Making",
@@ -15,21 +30,6 @@
     "last_modified": "2019-01-15T07:19:53+00:00",
     "preview_width": 1096,
     "preview_height": 543
-  },
-  {
-    "path": "posts/2019-01-14-geo-phy-lecture-1/",
-    "title": "Geometrical Anatomy of Theoretical Physics Lecture 1",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
-      }
-    ],
-    "date": "2019-01-14",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2019-01-14T14:28:19+00:00"
   },
   {
     "path": "posts/welcome/",

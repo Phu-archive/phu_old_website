@@ -1,11 +1,11 @@
 ---
 title: "Geometrical Anatomy of Theoretical Physics Lecture 1"
 description: |
-  A short description of the post.
+  Logic, including Propositional Logic, Predicate Logic, Axiomatic System/Theory of Proofs 
 author:
-  - name: Nora Jones
-    url: https://example.com/norajones
-date: 01-14-2019
+  - name: Phu Sakulwongtana
+    url: https://phutoast.github.io/
+date: 01-15-2019
 output:
   radix::radix_article:
     self_contained: false
@@ -15,7 +15,184 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Radix is a publication format for scientific and technical writing, native to the web.
 
-Learn more about using Radix at <https://rstudio.github.io/radix>.
+## Propositional Logic
 
+*Definition* -- A propositional $p$ is a variable that can take the value "True" or "False" and no others. 
+
+
+### Logical Operators 
+
+There are 4 possible combinations for unary operators, which are 
+
+
+| $P$         | $\neg P$  | $\text{ID} P$  | $\text{True } P$   | $\text{False } P$  |
+|-------------|-----------|----------------|--------------------|--------------------|
+| __`True`__  | `False`   | `True`         | `True`             | `False`            |
+| __`False`__ | `True`    | `False`        | `True`             | `False`            |
+
+
+There are 16 possible combinations for binary operators. These are useful binary operators we are going to use. 
+
+
+| $P$         | $Q$         | $P \wedge Q$   | $P \vee Q$   | $P \oplus Q$   | $P \rightarrow Q$   |
+|-------------|-------------|----------------|----------------|----------------|---------------------|
+| __`True`__  | __`True`__  | `True`         | `True`         | `False`        | `True`              |
+| __`True`__  | __`False`__ | `False`        | `True`         | `True`         | `False`             |
+| __`False`__ | __`True`__  | `False`        | `True`         | `True`         | `True`              |
+| __`False`__ | __`False`__ | `False`        | `False`        | `False`        | `True`              |
+
+
+__Theorem__ 
+
+$$
+\big( P \implies Q \big) \iff \big(\big( \neg Q \big) \implies \big( \neg P \big) \big)
+$$
+
+The *corollary* of this is that we can proof the assertions by way of contradiction. __Proof__ (using truth table): 
+
+| $P$         | $Q$         | $\neg P$ | $\neg Q$   | $P \implies Q$ | $\neg Q \implies \neg P$  |
+|-------------|-------------|----------|------------|----------------|---------------------------|
+| __`True`__  | __`True`__  | `False`  | `False`    | `True`         | `True`                    |
+| __`True`__  | __`False`__ | `False`  | `True`     | `False`        | `False`                   |
+| __`False`__ | __`True`__  | `True`   | `False`    | `True`         | `True`                    |
+| __`False`__ | __`False`__ | `True`   | `True`     | `True`         | `True`                    |
+
+*Remark* -- We are going to agree on decreasing binding strength in the sequence. 
+
+$$
+\neg, \wedge, \vee, \implies, \iff
+$$
+
+*Remark* -- Higher order operations can be constructed from one single opeartors. (Not then And)
+
+| $P$         | $Q$         | $P | Q$ |
+|-------------|-------------|---------|
+| __`True`__  | __`True`__  | `False` |
+| __`True`__  | __`False`__ | `True`  |
+| __`False`__ | __`True`__  | `True`  |
+| __`False`__ | __`False`__ | `True`  |
+
+---
+
+## Predicate Logic
+
+*Definition* -- Predicate is a proposition-valued function of some variables. For example $P(x)$ returns True or False depends on $x$. We can construct a new predicate from given ones. 
+
+$$
+Q(x, y, z) :\iff P(x) \wedge R(y, z)
+$$
+
+We can convert the predicate $P$ of 1 variable into a proposition, using. 
+
+$$
+\forall x : P(x)
+$$
+
+This one means that for all possible value of $x$ the predicate $P(x)$ is true. This is defined to be true if $P(x)$ is true independently of $x$.
+
+
+
+*Definition* -- Existence Quantification. (There exists an varaible $x$ such that $P(x)$ is true)
+
+$$
+\exists x : P(x) :\iff \forall x : (\neg P(x))
+$$
+
+*Remark* -- Quantification for predicate of more than one variables is possible, 
+
+$$
+Q(y) :\iff \forall x  : P (x, y)
+$$
+
+Where $x$ is calledge a bounded variable and $y$ is called free variable. 
+
+*Remark* -- Order of quantifier matters 
+
+$$
+\forall x \exists y : P(x, y) \not=  \exists y \forall x : P(x, y)
+$$
+
+---
+
+## Axiomatic System/Theory of Proofs 
+
+*Definition* -- Axiomatic system if a finite sequence of propositions or proposition scheme. 
+$$
+a_1, a_2, ..., a_n
+$$
+which are called axioms. 
+
+*Definition* -- Proof of a proposition $p$ within an axiomatic system is a finite sequence of propositions. 
+
+$$
+q_1, ..., q_M
+$$
+
+such that 
+
+$$
+q_1, ..., q_M \iff p
+$$
+
+For any $1 \le j \le M$ either 
+ 
+ * $q_j$ is a proposition from a list of axioms
+ * $q_j$ is a tautology, for example $$ p \vee \neg p $$
+ * Modud Ponens so that, this might be true
+
+$$
+  \exists 1 \le m, n < j : q_m \wedge q_n \implies q_j
+$$
+
+*Remark* -- If $P$ can be proven from an axiomatic system 
+
+$$
+a_1, a_2, ..., a_n
+$$
+
+We often write 
+
+$$
+a_1, a_2, ..., a_n \vdash P
+$$
+
+*Remark* -- This definition allows to easily recognized the proof. An altogether difficult matter is to find the proof. 
+
+*Remark* -- Obviously, any tautology shouldn't occur in the axioms. It can be removed from the list of axioms without impairing the system of the axiomatic system. 
+
+*Extreme Case* -- Axiomatic System for propositional logic is an empty sequence.
+
+*Definition* -- An axiomatic system is consistent if there exists a proposition $Q$ which can't be proven from the axioms. 
+
+$$
+\neg (a_1, ...., a_n \vdash Q) 
+$$
+
+Idea behind this definition is that if we consider an axiomatic system containing contradicting preposition statement. 
+
+$$
+..., s, ..., \neg s, ...
+$$
+
+Then by Modus Ponens clearly, this is true (tautology) for any statement $Q$
+
+$$
+s \wedge \neg s \implies Q
+$$
+
+__Theorem__ -- Propositional Logic is Consistent 
+
+__Proof__ -- Suffiece to show that there exists a proposition that can't be proven within propositional logic. Since it has an empty sequence of axions, there are only tautology and Modus Ponens rules to carry out the proof. We can show that 
+
+$$
+q \wedge \neg q
+$$
+
+can't be proven.
+
+__Theorem(Godel)__ -- Any axiomatic system that is powerful enough to encode the elementary arithmetic of natural number is either *inconsistent* or contains a proposition that neither be proven or disproven.
+
+```{r, echo=FALSE}
+htmltools::includeHTML("katex.html")
+```
