@@ -1,5 +1,5 @@
 ---
-title: "Deep Reinforcement Learning"
+title: "Geometrical Anatomy of Theoretical Physics"
 site: radix::radix_website
 listing: 
   posts:

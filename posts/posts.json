@@ -1,18 +1,18 @@
 [
   {
     "path": "posts/2019-01-14-deep-rl-lecture-1/",
-    "title": "Deep RL Lecture 1",
-    "description": "A short description of the post.",
+    "title": "Deep Reinforcement Learning Lecture 1",
+    "description": "Supervised Learning and Decision Making",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Phu Sakulwongtana",
+        "url": "http://phutoast.github.io"
       }
     ],
     "date": "2019-01-14",
     "categories": [],
-    "preview": {},
-    "last_modified": "2019-01-14T11:49:44+00:00"
+    "preview": "posts/2019-01-14-deep-rl-lecture-1/Images/Figure1.png",
+    "last_modified": "2019-01-15T06:47:37+00:00"
   },
   {
     "path": "posts/2019-01-14-geo-phy-lecture-1/",
