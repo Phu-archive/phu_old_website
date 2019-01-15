@@ -56,7 +56,7 @@
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bib","deep-rl-lecture-1_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-1_files/distill-2.2.21/template.v2.js","deep-rl-lecture-1_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-1_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","Images/Figure3.png","Images/Figure4.png","Images/Figure5.png","Images/Figure6.png","Images/Figure7.png","Images/Figure8.png"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","deep-rl-lecture-1_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-1_files/distill-2.2.21/template.v2.js","deep-rl-lecture-1_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-1_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","Images/Figure3.png","Images/Figure4.png","Images/Figure5.png","Images/Figure6.png","Images/Figure7.png","Images/Figure8.png","katex.html","katex.min.css","katex.min.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1511,6 +1511,29 @@ c(x, u) = - \log p(u=\pi^*(x) | x)
 <p><span class="math display">\[
 \min \sum^T_{t=1} \mathbb{E}\big[ c(x_t, u_t) \big] \text{ where } x_{t+1} \sim p(x_{t+1}|x_t, u_t)
 \]</span></p>
+<div class="layout-chunk" data-layout="l-body">
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous"/>
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <script src="katex.min.js"></script>
+    
+
+  </head>
+  <body>
+
+    
+  </body>
+</html>
+</div>
 <div id="refs" class="references">
 <div id="ref-DBLP:journals/corr/BojarskiTDFFGJM16">
 <p>Bojarski, Mariusz, Davide Del Testa, Daniel Dworakowski, Bernhard Firner, Beat Flepp, Prasoon Goyal, Lawrence D. Jackel, et al. 2016. “End to End Learning for Self-Driving Cars.” <em>CoRR</em> abs/1604.07316. <a href="http://arxiv.org/abs/1604.07316" class="uri">http://arxiv.org/abs/1604.07316</a>.</p>

@@ -238,3 +238,7 @@ The Problem Statement
 $$
 \min \sum^T_{t=1} \mathbb{E}\big[ c(x_t, u_t) \big] \text{ where } x_{t+1} \sim p(x_{t+1}|x_t, u_t)
 $$
+
+```{r, echo=FALSE}
+htmltools::includeHTML("katex.html")
+```
