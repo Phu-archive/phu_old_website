@@ -9,6 +9,8 @@ date: 01-15-2019
 output:
   radix::radix_article:
     self_contained: false
+    toc: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -191,7 +193,7 @@ $$
 
 can't be proven.
 
-__Theorem(Godel)__ -- Any axiomatic system that is powerful enough to encode the elementary arithmetic of natural number is either *inconsistent* or contains a proposition that neither be proven or disproven.
+__Theorem (Godel)__ -- Any axiomatic system that is powerful enough to encode the elementary arithmetic of natural number is either *inconsistent* or contains a proposition that neither be proven or disproven.
 
 ```{r, echo=FALSE}
 htmltools::includeHTML("katex.html")

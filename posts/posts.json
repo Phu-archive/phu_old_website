@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-01-16-deep-rl-lecture-2/",
+    "title": "Deep Reinforcement Learning Lecture 2",
+    "description": "Reinforcement Learning Introduction",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-01-19",
+    "categories": [],
+    "preview": "posts/2019-01-16-deep-rl-lecture-2/Images/Figure1.png",
+    "last_modified": "2019-01-19T21:21:12+00:00",
+    "preview_width": 1122,
+    "preview_height": 254
+  },
+  {
     "path": "posts/2019-01-14-geo-phy-lecture-1/",
     "title": "Geometrical Anatomy of Theoretical Physics Lecture 1",
     "description": "Logic, including Propositional Logic, Predicate Logic, Axiomatic System/Theory of Proofs",
@@ -12,7 +29,7 @@
     "date": "2019-01-15",
     "categories": [],
     "preview": {},
-    "last_modified": "2019-01-15T20:11:56+00:00"
+    "last_modified": "2019-01-16T20:07:31+00:00"
   },
   {
     "path": "posts/2019-01-14-deep-rl-lecture-1/",

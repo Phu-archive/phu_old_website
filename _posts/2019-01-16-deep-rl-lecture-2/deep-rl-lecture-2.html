@@ -19,367 +19,39 @@
  <!--/radix_placeholder_import_source-->
 
   <!--radix_placeholder_meta_tags-->
-  <title>Phu's Website: Phu's Machine Learning and Deep Learning Blog</title>
+  <title>Deep Reinforcement Learning Lecture 2</title>
+  
+  <meta property="description" itemprop="description" content="Reinforcement Learning Introduction"/>
   
   
-  
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2019-01-19"/>
+  <meta property="article:created" itemprop="dateCreated" content="2019-01-19"/>
+  <meta name="article:author" content="Phu Sakulwongtana"/>
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Phu&#39;s Website: Phu&#39;s Machine Learning and Deep Learning Blog"/>
+  <meta property="og:title" content="Deep Reinforcement Learning Lecture 2"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Reinforcement Learning Introduction"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Phu&#39;s Website"/>
   
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Phu&#39;s Website: Phu&#39;s Machine Learning and Deep Learning Blog"/>
+  <meta property="twitter:title" content="Deep Reinforcement Learning Lecture 2"/>
+  <meta property="twitter:description" content="Reinforcement Learning Introduction"/>
   
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Phu's Machine Learning and Deep Learning Blog"]},{"type":"character","attributes":{},"value":["radix::radix_website"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["posts"]}},"value":[{"type":"character","attributes":{},"value":["welcome"]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Deep Reinforcement Learning Lecture 2"]},{"type":"character","attributes":{},"value":["Reinforcement Learning Introduction\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["01-19-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
   
-  <script type="application/javascript">
-  
-    window.headroom_prevent_pin = false;
-  
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-  
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-  
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-  
-      // responsive menu
-      $('.radix-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-  
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["biblio.bib","deep-rl-lecture-2_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-2_files/distill-2.2.21/template.v2.js","deep-rl-lecture-2_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-2_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","Images/Figure3.png","Images/Figure4.png","Images/Figure5.png","Images/Figure6.png","katex.html","katex.min.css","katex.min.js"]}
   </script>
-  
-  <style type="text/css">
-  
-  /* Theme (user-documented overrideables for nav appearance) */
-  
-  .radix-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #455a64;
-    font-size: 15px;
-    font-weight: 300;
-  }
-  
-  .radix-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .radix-site-nav a:hover {
-    color: white;
-  }
-  
-  @media print {
-    .radix-site-nav {
-      display: none;
-    }
-  }
-  
-  .radix-site-header {
-  
-  }
-  
-  .radix-site-footer {
-  
-  }
-  
-  
-  /* Site Header */
-  
-  .radix-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-  
-  .radix-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-  
-  
-  .radix-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-  
-  .radix-site-header a,
-  .radix-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-  
-  .radix-site-header .title {
-    font-size: 18px;
-  }
-  
-  .radix-site-header .logo {
-    padding: 0;
-  }
-  
-  .radix-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-  
-  .radix-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-  
-  
-  
-  @media screen and (min-width: 1000px) {
-    .radix-site-header .logo img {
-      display: inline-block;
-    }
-    .radix-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .radix-site-header .title {
-      padding-left: 12px;
-    }
-  }
-  
-  
-  .radix-site-header .nav-toggle {
-    display: none;
-  }
-  
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-  
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-  
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-  
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-dropdown-active {
-    display: block;
-  }
-  
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-  
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-  
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header a, .radix-site-header .nav-dropdown  {display: none;}
-    .radix-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .radix-site-header .title {
-      margin-left: 0;
-    }
-    .radix-site-header .nav-right {
-      margin-right: 0;
-    }
-    .radix-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-  
-  
-  @media screen and (max-width: 768px) {
-    .radix-site-header.responsive {position: relative;}
-    .radix-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .radix-site-header.responsive a,
-    .radix-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .radix-site-header.responsive .nav-left,
-    .radix-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .radix-site-header.responsive .nav-dropdown {float: none;}
-    .radix-site-header.responsive .nav-dropdown-content {position: relative;}
-    .radix-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-  
-  /* Site Footer */
-  
-  .radix-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-  
-  /* Headroom */
-  
-  d-title {
-    padding-top: 6rem;
-  }
-  
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-  
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-  
-  .headroom--unpinned {
-    top: -100px;
-  }
-  
-  .headroom--pinned {
-    top: 0;
-  }
-  
-  </style>
-  
-  <link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet"/>
-  <script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-  <script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
   
@@ -1255,403 +927,415 @@
   </script>
   
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="deep-rl-lecture-2_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="deep-rl-lecture-2_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="deep-rl-lecture-2_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="deep-rl-lecture-2_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110171854-1"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-110171854-1');
-  </script>
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Phu's Machine Learning and Deep Learning Blog","authors":[]}
+{"title":"Deep Reinforcement Learning Lecture 2","description":"Reinforcement Learning Introduction","authors":[{"author":"Phu Sakulwongtana","authorURL":"https://phutoast.github.io/","affiliation":"&nbsp;","affiliationURL":"#"}],"publishedDate":"2019-01-19T00:00:00.000+00:00","citationText":"Sakulwongtana, 2019"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="radix-site-nav radix-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Phu's Website</a>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="notes.html">Notes</a>
-<a href="blog.html">Blogs</a>
-<a href="CV.pdf">CV</a>
-<a href="https://github.com/phutoast">
-<i class="fab fa-github"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-<style type="text/css">
-
-/* Styles for listing layout (hide title) */
-.layout-listing d-title, .layout-listing .d-title {
-  display: none;
-}
-
-/* Styles for posts lists (not auto-injected) */
-
-
-.posts-with-sidebar {
-  padding-left: 45px;
-  padding-right: 45px;
-}
-
-.posts-list .description h2,
-.posts-list .description p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-}
-
-.posts-list .description h2 {
-  font-weight: 700;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.posts-list h2.post-tag {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 12px;
-}
-.posts-list {
-  margin-top: 60px;
-  margin-bottom: 24px;
-}
-
-.posts-list .post-preview {
-  text-decoration: none;
-  overflow: hidden;
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 24px 0;
-}
-
-.post-preview-last {
-  border-bottom: none !important;
-}
-
-.posts-list .posts-list-caption {
-  grid-column: screen;
-  font-weight: 400;
-}
-
-.posts-list .post-preview h2 {
-  margin: 0 0 6px 0;
-  line-height: 1.2em;
-  font-style: normal;
-  font-size: 24px;
-}
-
-.posts-list .post-preview p {
-  margin: 0 0 12px 0;
-  line-height: 1.4em;
-  font-size: 16px;
-}
-
-.posts-list .post-preview .thumbnail {
-  box-sizing: border-box;
-  margin-bottom: 24px;
-  position: relative;
-  max-width: 500px;
-}
-.posts-list .post-preview img {
-  width: 100%;
-  display: block;
-}
-
-.posts-list .metadata {
-  font-size: 12px;
-  line-height: 1.4em;
-  margin-bottom: 18px;
-}
-
-.posts-list .metadata > * {
-  display: inline-block;
-}
-
-.posts-list .metadata .publishedDate {
-  margin-right: 1em;
-}
-
-.posts-list .metadata .tags {
-  margin-top: 1em;
-}
-
-.posts-list .tags .tag {
-  color: rgba(0,0,0,0.67);
-  padding: 0.3em 0.5em;
-  margin: 0;
-  font-size: 80%;
-  border: 1px solid rgba(0,0,0,0.4);
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.posts-list img {
-  opacity: 1;
-}
-
-.posts-list img[data-src] {
-  opacity: 0;
-}
-
-.posts-more {
-  clear: both;
-}
-
-
-.posts-sidebar {
-  font-size: 16px;
-}
-
-.posts-sidebar h3 {
-  font-size: 16px;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.sidebar-section {
-  margin-bottom: 30px;
-}
-
-.categories ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.categories li {
-  color: rgba(0, 0, 0, 0.8);
-  margin-bottom: 0;
-}
-
-.categories li>a {
-  border-bottom: none;
-}
-
-.categories li>a:hover {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.categories .active {
-  font-weight: 600;
-}
-
-.categories .category-count {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-
-@media(min-width: 768px) {
-  .posts-list .post-preview h2 {
-    font-size: 26px;
-  }
-  .posts-list .post-preview .thumbnail {
-    float: right;
-    width: 35%;
-    margin-bottom: 0;
-  }
-  .posts-list .post-preview .description {
-    float: left;
-    width: 45%;
-  }
-  .posts-list .post-preview .metadata {
-    float: left;
-    width: 15%;
-    margin-top: 8px;
-  }
-  .posts-list .post-preview p {
-    margin: 0 0 12px 0;
-    line-height: 1.5em;
-    font-size: 16px;
-  }
-  .posts-with-sidebar .posts-list {
-    float: left;
-    width: 72%;
-  }
-  .posts-with-sidebar .posts-sidebar {
-    float: right;
-    width: 20%;
-    margin-top: 60px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-}
-
-.downlevel .posts-list .post-preview {
-  color: inherit;
-}
-
-</style>
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).load(function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace("#", "");
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if (category == page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + window.location.hash + '"]').addClass('active');
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption">Phu's Machine Learning and Deep Learning Blog</h1>
-<a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 14, 2019</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Welcome to My Blog</h2>
-<p>Welcome to our new blog, My Blog. We hope you enjoy 
-reading what we have to say!</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Phu’s Machine Learning and Deep Learning Blog</h1>
-
+<h1>Deep Reinforcement Learning Lecture 2</h1>
+<p>Reinforcement Learning Introduction</p>
 </div>
 
+<div class="d-byline">
+  Phu Sakulwongtana <a href="https://phutoast.github.io/" class="uri">https://phutoast.github.io/</a> 
+  
+<br/>01-19-2019
+</div>
 
 <div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#overview-of-the-notations-and-the-problem">Overview of the Notations and The Problem</a></li>
+<li><a href="#goal-of-reinforcement-learning">Goal of Reinforcement Learning</a></li>
+<li><a href="#overview-of-reinforcement-learning-algorithms">Overview of Reinforcement Learning Algorithms</a></li>
+<li><a href="#value-function-and-q-function">Value Function and Q-Function</a></li>
+<li><a href="#types-of-reinforcement-learning-algorithm">Types of Reinforcement Learning Algorithm</a></li>
+<li><a href="#why-there-are-so-many-reinforcement-learning-algorithm">Why there are so many Reinforcement Learning Algorithm ?</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
+<h2 id="overview-of-the-notations-and-the-problem">Overview of the Notations and The Problem</h2>
+<h3 id="reward-function">Reward Function</h3>
+<p>The reward function is telling us, whuch action is better or worst given the current state. It is denoted as:</p>
+<p><span class="math display">\[
+r(s, a)
+\]</span> This is called reward function.</p>
+<h3 id="markov-chain">Markov Chain</h3>
+<p>Markov Chain is defined by 2-elements tuple:</p>
+<p><span class="math display">\[
+\mathcal{M = \{ S, T \}}
+\]</span></p>
+<p><strong>State Space</strong> – <span class="math inline">\(\mathcal{S}\)</span> is called a state space(which can either be discrete or continuous).</p>
+<p><strong>Transition Probability</strong> – <span class="math inline">\(\mathcal{T}\)</span> is the transition operator, which calculates</p>
+<p><span class="math display">\[
+p(s_{t+1} | s_t)
+\]</span></p>
+<p>Let <span class="math inline">\(\mu\)</span> be the vector of probability of the states <span class="math display">\[
+\mu_{t, i} = p(s_t = i)
+\]</span></p>
+<p>Let the transition probability be defined as</p>
+<p><span class="math display">\[
+\mathcal{T}_{i, j} = p(s_{t+1} = i | s_t = i)
+\]</span></p>
+<p>Applying the Transition Probability to the probability over the states, giving out</p>
+<p><span class="math display">\[
+\mu_{i+1} = \mathcal{T} \mu_t
+\]</span></p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="Images/Figure1.png" alt="Graphical Model of the Markov Chain(Inspire by in-slide figure)" width="561" />
+<p class="caption">
+Figure 1: Graphical Model of the Markov Chain(Inspire by in-slide figure)
+</p>
+</div>
+</div>
+<h3 id="markov-decision-process">Markov Decision Process</h3>
+<p>Markov Decision Process is defined by 4-elements tuple:</p>
+<p><span class="math display">\[
+\mathcal{M = \{ S, A, T, r \}}
+\]</span></p>
+<p><strong>State Space</strong> – <span class="math inline">\(\mathcal{S}\)</span> is a state space, similar to <em>Markov Chain</em> above.</p>
+<p><strong>Action Space</strong> – <span class="math inline">\(\mathcal{A}\)</span> is the action space (action can be discrete or continuous).</p>
+<p><strong>Transition Operation</strong> – Now the transition operation becomes a tensor instread of the matrices. Defined the state distribution given the current timestep as</p>
+<p><span class="math display">\[
+\mu_{t, j} = p(s_t = j)
+\]</span> Let <span class="math inline">\(xi\)</span> be the action distribution given the current timestep as</p>
+<p><span class="math display">\[
+\xi_{t, k} = p (a_t = k)
+\]</span></p>
+<p>Let <span class="math inline">\(\mathcal{T}\)</span> be the transition opeartion be</p>
+<p><span class="math display">\[
+\mathcal{T}_{i, j, k} = p(s_{t+1} = i | s_t = j, a_t = k)
+\]</span></p>
+<p>The state distribution after the transition would be calculated by</p>
+<p><span class="math display">\[
+\mu_{t+1, k} = \sum_{j, k} \mathcal{T}_{ijk} \mu_{tj} \xi_{tk}
+\]</span></p>
+<p><strong>Reward Function</strong> – The reward function is defined by</p>
+<p><span class="math display">\[
+r : \mathcal{S \times A \rightarrow \mathbb{R}}
+\]</span></p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="Images/Figure2.png" alt="Graphical Model of the Markov Decision Process(Inspire by in-slide figure)" width="561" />
+<p class="caption">
+Figure 2: Graphical Model of the Markov Decision Process(Inspire by in-slide figure)
+</p>
+</div>
+</div>
+<h3 id="partially-observed-markov-decision-process">Partially Observed Markov Decision Process</h3>
+<p>Partially Observed Markov Decision Process is defined by 6-elements tuple.</p>
+<p><span class="math display">\[
+\mathcal{M = \{ S, A, O, T, E, r \}}
+\]</span></p>
+<p>The symbols that are the same as Markov Decision Process have the same meaning.</p>
+<p><strong>Observation Space</strong> – <span class="math inline">\(\mathcal{O}\)</span> is the observation space, where observation can be discrete or continuous.</p>
+<p><strong>Emission Probability</strong> – The observation is conditioned on the current state <span class="math display">\[
+p(o_t|s_t)
+\]</span></p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="Images/Figure3.png" alt="Graphical Model of the Partially Observed Markov Decision Process(Inspire by in-slide figure)" width="584" />
+<p class="caption">
+Figure 3: Graphical Model of the Partially Observed Markov Decision Process(Inspire by in-slide figure)
+</p>
+</div>
+</div>
+<hr />
+<h2 id="goal-of-reinforcement-learning">Goal of Reinforcement Learning</h2>
+<p>We can define the <strong>policy</strong> of the reinforcement learning agent as</p>
+<p><span class="math display">\[
+\pi_{\theta}(\tau) = p_{\theta}(s_1, a_1, ..., s_T, a_T) = p(s_1) \prod^T_{t=1} \pi_{\theta}(a_t|s_t) p(s_{t+1} | s_t, a_t)
+\]</span></p>
+<p>We can say that</p>
+<p><span class="math display">\[
+p(s_{t+1}, a_{t+1} | s_t, a_t) = p(s_{t+1} | s_t, a_t)\pi_{\theta}(a_{t+1}|s_{t+1}) 
+\]</span></p>
+<h3 id="finite-horizon-case">Finite Horizon Case</h3>
+<p>In the finite horizon case, we can define the <strong>objective</strong> as</p>
+<p><span class="math display">\[
+\theta^* = \arg\max_{\theta} \mathbb{E}_{\tau \sim p_{\theta}(\tau)} \left[\sum_t r(s_t, a_t)\right]
+\]</span></p>
+<p>which is equivalent to</p>
+<p><span class="math display">\[
+\arg\max_{\theta} \sum^T_{t=1} \mathbb{E}_{(s_t, a_t) \sim p_{\theta}(s_t, a_t)} \left[r(s_t, a_t)\right]
+\]</span></p>
+<h3 id="infinite-horizon-case-stationary-distribution">Infinite Horizon Case – Stationary Distribution</h3>
+<p>The state transition function can be used as</p>
+<p><span class="math display">\[
+\begin{pmatrix} s_{t+k} \\ a_{t+k} \end{pmatrix} = \mathcal{T}^k\begin{pmatrix} s_{t} \\ a_{t} \end{pmatrix}
+\]</span></p>
+<p>What if the game is played for ever, does <span class="math inline">\(p(s, at)\)</span> converges to a stationary distribution, aka <span class="math display">\[
+\mu = \mathcal{T} \mu
+\]</span></p>
+<p>Rearrange the equation to get</p>
+<p><span class="math display">\[
+(\mathcal{T} - I) \mu = 0
+\]</span></p>
+<p>Where <span class="math inline">\(\mu\)</span> is the eigenvalue of <span class="math inline">\(\mathcal{T}\)</span> with eigenvalue of 1 (always exists under some regularly condition). Since we will stuck to the stationary distribution forever, we can just maximized the stationary reward.</p>
+<p><span class="math display">\[
+\mathbb{E}_{(s, a) \sim p_{\theta}(s_t, a_t)}\left[ r(s, a) \right]
+\]</span></p>
+<h3 id="expectation-and-stochastic-system">Expectation and Stochastic System</h3>
+<p>In reinforcement learning, we almost always care about expectation. For example, a car on a cliff, the reward function is represented by the car not falling, but the reward expectation according to probability of falling if smooth in <span class="math inline">\(\psi\)</span></p>
+<p><span class="math display">\[
+\mathbb{E} _{(s, a) \sim p_{\psi}(s, a)}\left[r(s, a)\right]
+\]</span></p>
+<hr />
+<h2 id="overview-of-reinforcement-learning-algorithms">Overview of Reinforcement Learning Algorithms</h2>
+<h3 id="anatomy-of-a-reinforcement-learning-algorithm">Anatomy of a Reinforcement Learning Algorithm</h3>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="Images/Figure4.png" alt="General Pattern of Reinforcement Learning Algorithm(Inspire by in-slide figure)" width="514" />
+<p class="caption">
+Figure 4: General Pattern of Reinforcement Learning Algorithm(Inspire by in-slide figure)
+</p>
+</div>
+</div>
+<h4 id="a-fit-a-model-or-estimate-the-return-can-be">A Fit a model or Estimate the return can be</h4>
+<ul>
+<li>Computer discounted reward in Monte Carlo policiy gradient algorithm</li>
+<li>Fit <span class="math inline">\(Q\)</span> for Q-Learning or Actor Critic</li>
+<li>Estimate the transition function in Model-Based</li>
+<li>Stochastic Gradient Ascent as in Policy Gradient</li>
+</ul>
+<h4 id="for-improve-the-policy-can-be">For improve the Policy can Be</h4>
+<ul>
+<li>Maximized <span class="math inline">\(Q\)</span>-function in Q-learning</li>
+<li>Optimized Policy in Model-Based algorithm</li>
+</ul>
+<h4 id="which-parts-are-expensive">Which Parts are Expensive</h4>
+<ul>
+<li>Generate Sample – Hard if it is real world scenario like a real car or robot.</li>
+<li>Fit a Model – Q-Learning part, which is not trivial to parallelized</li>
+<li>Improve the policy – Optimize Policy, which is not also trivial to parallelized</li>
+</ul>
+<h3 id="reinforcement-learning-by-backpropagation-simple-example">Reinforcement Learning by Backpropagation – Simple Example</h3>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
+<img src="Images/Figure5.png" alt="Computation Graph for Reinforcement Learning by Backpropagation(Inspire by in-slide figure)" width="1094" />
+<p class="caption">
+Figure 5: Computation Graph for Reinforcement Learning by Backpropagation(Inspire by in-slide figure)
+</p>
+</div>
+</div>
+<p>This example is fitted through the common theme of reinforcement learning algorithm</p>
+<ul>
+<li>Collect Data – Generate Example</li>
+<li>Update the Model – Fit The Model</li>
+<li>Forward Pass – Estimate Return</li>
+<li>Backward Pass – Update The Model</li>
+</ul>
+<p>But this approach to Reinforcement Learning has many issues/restriction, for example,</p>
+<p>This algorithm can only handles <em>Deterministic</em> Dynamics and Policy, the state and action must be <em>Continuous</em> and the problem itself is difficult optimization problem.</p>
+<hr />
+<h2 id="value-function-and-q-function">Value Function and Q-Function</h2>
+<h3 id="conditional-expectation">Conditional Expectation</h3>
+<p><span class="math display">\[
+\sum^T_{t=1} \mathbb{E}_{(s_t, a_t) \sim p_{\theta}(s_t, a_t)} \left[r(s_t, a_t)\right]
+\]</span></p>
+<p>We can expand the equation to get.</p>
+<p><span class="math display">\[
+\mathbb{E}_{s_1 \sim p(s_1)}\left[ \mathbb{E}_{a_1 \sim \pi(a_1|s_1)}\left[r(s_1, a_1) + \mathbb{E}_{s_2 \sim p(s_2 | s_1, a_2)}[\cdots] \big| s_1\right] \right]
+\]</span> So the <span class="math inline">\(Q\)</span> function for the first state an action is defined by</p>
+<p><span class="math display">\[
+Q(s_1, a_1) = r(s_1, a_1) + \mathbb{E}_{s_2 \sim p(s_2 | s_1, a_1)} \left[ \mathbb{E}_{a_2 \sim \pi(a_2| s_2)} [\cdots] \right]
+\]</span></p>
+<p>So everything can be reduced to</p>
+<p><span class="math display">\[
+\mathbb{E}_{s_1 \sim p(s_1)}\left[ \mathbb{E}_{a_1 \sim \pi(a_1|s_1)} \left[Q(s_1, a_1) | s_1\right] \right]
+\]</span></p>
+<p>Now we can easily modify the algorithm to <span class="math display">\[
+\pi(a_1|s_1) = 1 \text{ if } a_1 = \arg\max_{a_1} Q(s_1, a_1)
+\]</span></p>
+<p>The <em>Definition</em> of Q-Function can be</p>
+<p><span class="math display">\[
+Q^{\pi}(s_t, a_t) = \sum^T_{t&#39;=t} \mathbb{E}_{\pi_{\theta}} [r(s_{t&#39;}, a_{t&#39;}) | s_t, a_t]
+\]</span></p>
+<p>The <em>Definition</em> of Value Function is</p>
+<p><span class="math display">\[
+V^{\pi}(s_t) = \sum^T_{t&#39;=t} \mathbb{E}_{\pi_{\theta}} [r(s_{t&#39;}, a_{t&#39;}) | s_t]
+\]</span></p>
+<p>which represents the total reward from state <span class="math inline">\(s\)</span>, or equivalently</p>
+<p><span class="math display">\[
+V^{\pi}(s_t) = \mathbb{E}_{a_t \sim \pi(a_t|s_t)} [Q^{\pi}(s_t, a_t)]
+\]</span></p>
+<p>where the Reinforcement Learning objective is equal to</p>
+<p><span class="math display">\[
+\mathbb{E}_{s_1 \sim p(s_1)} [V^{\pi}(s_1)]
+\]</span></p>
+<h3 id="using-q-function-and-value-function">Using Q-Function and Value Function</h3>
+<h4 id="idea-1">Idea 1</h4>
+<p>If we have the policy <span class="math inline">\(\pi\)</span> we know the Q-Functiob of it we can improve the policy by setting,</p>
+<p><span class="math display">\[
+\pi&#39;(a_1|s_1) = 1 \text{ if } a_1 = \arg\max_{a_1} Q(s_1, a_1)
+\]</span></p>
+<p>This policy is at least as good as the policy before, and this fact doesn’t matter what the policy is.</p>
+<h4 id="idea-2">Idea 2</h4>
+<p>Computing gradient to increase probability of a good action, so if</p>
+<p><span class="math display">\[
+Q^{\pi}(s, a) &gt; V^{\pi}(s)
+\]</span></p>
+<p>then the action is better than average.</p>
+<hr />
+<h2 id="types-of-reinforcement-learning-algorithm">Types of Reinforcement Learning Algorithm</h2>
+<ul>
+<li>Policy Gradient – Directly optimize the objective</li>
+<li>Value Based – Estimate Value Function or Q-Function of the optimal policy</li>
+<li>Actor-Critic – Estimate Value Function or Q-Function of the current policy to improve it</li>
+<li>Model-Based – Esitmate the transition model, use it for training or improve policy.</li>
+</ul>
+<h3 id="model-based-algorithm">Model-Based Algorithm</h3>
+<p>We are trying to learn</p>
+<p><span class="math display">\[
+p(s_{t+1}| s_t, a_t)
+\]</span></p>
+<p>We then improve the policy by</p>
+<ul>
+<li>Use the model to plan (No explicit Policy Involved)
+<ul>
+<li>Trajectory optimization with back-propagation to optimized over action</li>
+<li>Discrete Planning in Discrete Action Space</li>
+</ul></li>
+<li><p>Back-Propagation into the policy requires some trick to works</p></li>
+<li><p>Use the model to learn value function via Dynamic Programming or <em>Dyna</em> (Generate Experience for Model-Free Learner)</p></li>
+</ul>
+<h3 id="value-function-based-algorithm">Value Function Based Algorithm</h3>
+<p>We fit a model to estimate <span class="math inline">\(V(s)\)</span> or <span class="math inline">\(Q(s, a)\)</span> and set the policy to be <span class="math display">\[
+\pi(s) = \arg\max_{a} Q(s, a)
+\]</span></p>
+<h3 id="direct-policy-gradient">Direct Policy Gradient</h3>
+<p>We can improve the policy by <span class="math display">\[
+\theta \leftarrow \theta + \alpha \nabla_{\theta} \mathbb{E} \left[ \sum_r r(s_t, a_t)  \right]
+\]</span></p>
+<h3 id="actor-critic">Actor Critic</h3>
+<p>We fit the model to estimate <span class="math inline">\(V(s)\)</span> or <span class="math inline">\(Q(s, a)\)</span>, but instead of using the value function to choose the action, we evaluate the return and improve the policy with the help of <span class="math inline">\(V(s)\)</span> or <span class="math inline">\(Q(s, a)\)</span>.</p>
+<aside>
+Actor Critic has similar structure to Direct Policy Gradient. Discuss this in future lecture
+</aside>
+<p><span class="math display">\[
+\theta \leftarrow \theta + \alpha \nabla_{\theta} \mathbb{E} \left[ \sum_r r(s_t, a_t)  \right]
+\]</span></p>
+<hr />
+<h2 id="why-there-are-so-many-reinforcement-learning-algorithm">Why there are so many Reinforcement Learning Algorithm ?</h2>
+<p>For difference algorithm there are</p>
+<ul>
+<li><p>Difference Tradeoff</p>
+<ul>
+<li>Sample Efficiency</li>
+<li>Stability and Ease to Use</li>
+</ul></li>
+<li><p>Difference Assumption</p>
+<ul>
+<li>Stochastic or Deterministic ?</li>
+<li>Discrete or Continuous ?</li>
+<li>Episodic or Infinite Horizon ?</li>
+</ul></li>
+<li><p>Difference things are <em>easy</em> or <em>hard</em> in different settings</p></li>
+</ul>
+<h3 id="sample-efficiency">Sample Efficiency</h3>
+<p>How many samples do we need to get a good policy ? Is the algorithm <em>off-policy</em> ?</p>
+<ul>
+<li>Off-Policy – Able to improve the policy without getting new samples from that policy</li>
+<li>On-Policy – Need to get new data when policy changes</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<img src="Images/Figure6.png" alt="Difference Algorithms with Difference Efficiency(In-slide figure)" width="1241" />
+<p class="caption">
+Figure 6: Difference Algorithms with Difference Efficiency(In-slide figure)
+</p>
+</div>
+</div>
+<p>Why would we use a less efficient algorithms ? Wall-Clock Time isn’t the same as efficiency.</p>
+<h3 id="stability-and-ease-of-use">Stability and Ease of Use</h3>
+<p>Does the algorithm converges ? and if it converges, which point it is converged to ? Does it converge everytime ?</p>
+<ul>
+<li>Supervised Learning – Almost Always “converges” using gradient descent.</li>
+<li>Reinforcement Learning – Often not converge under gradient descent
+<ul>
+<li>Q-Learning – Fixed Point Iteration</li>
+<li>Model-Based Reinforcement Learning – The model isn’t optimized for expected reward.</li>
+<li>Policy Gradient is gradient descept, but also the least efficient.</li>
+</ul></li>
+</ul>
+<p><strong>Comparison between different types of algorithms</strong></p>
+<ul>
+<li><p>Value Function Fitting</p>
+<ul>
+<li>At best, it minimizes error (Bellman Error) – Not the same as expected reward</li>
+<li>At worst, it doesn’t optimized anything.</li>
+</ul></li>
+<li><p>Many popular Deep Reinforcement Learning value fitting algorithm are not guaranteed to converge to anything in non-linear case.</p></li>
+<li><p>Model-Based Reinforcement Learning</p>
+<ul>
+<li>Model Minimizes error of fit – This will converge.</li>
+<li>No guarantee that better model implies better policy.</li>
+</ul></li>
+<li>Policy Gradient
+<ul>
+<li>The only one that actual perform gradient descent on the true objective.</li>
+</ul></li>
+</ul>
+<h3 id="assumptions">Assumptions</h3>
+<p><strong>Common Assumption #1 – Full Observability</strong></p>
+<ul>
+<li>Generally Assumed by value function fitting method</li>
+<li>Can be mitigated by adding Recurrence (RNN, etc.)</li>
+</ul>
+<p><strong>Common Assumption #2 – Episodic Learning</strong></p>
+<ul>
+<li>Often assumed by pure policy graident methods</li>
+<li>Assumed by some model based Reinforcement Learning methods</li>
+</ul>
+<p><strong>Common Assumption #3 – Continuity or Smoothness</strong></p>
+<ul>
+<li>Assumed by some continous value function methods and some model-based Reinforcement Learning methods</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous"/>
 
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    <script src="katex.min.js"></script>
+    
+
+  </head>
+  <body>
+
+    
+  </body>
+</html>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1659,6 +1343,15 @@ reading what we have to say!</p>
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

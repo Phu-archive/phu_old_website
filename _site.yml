@@ -4,6 +4,7 @@ description: |
   Phu Website
 output_dir: "."
 base_url: http://phutoast.github.io
+google_analytics: "UA-110171854-1"
 collections:
   posts:
     share: [twitter, linkedin, facebook]
@@ -22,3 +23,5 @@ navbar:
     - icon: fab fa-github
       href: https://github.com/phutoast
 output: radix::radix_article
+
+
