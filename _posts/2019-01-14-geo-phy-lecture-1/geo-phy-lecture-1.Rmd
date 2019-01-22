@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Propositional Logic
 
-*Definition* -- A propositional $p$ is a variable that can take the value "True" or "False" and no others. 
+__Definition__ -- A propositional $p$ is a variable that can take the value "True" or "False" and no others. 
 
 
 ### Logical Operators 
@@ -60,13 +60,13 @@ The *corollary* of this is that we can proof the assertions by way of contradict
 | __`False`__ | __`True`__  | `True`   | `False`    | `True`         | `True`                    |
 | __`False`__ | __`False`__ | `True`   | `True`     | `True`         | `True`                    |
 
-*Remark* -- We are going to agree on decreasing binding strength in the sequence. 
+__Remark__ -- We are going to agree on decreasing binding strength in the sequence. 
 
 $$
 \neg, \wedge, \vee, \implies, \iff
 $$
 
-*Remark* -- Higher order operations can be constructed from one single opeartors. (Not then And)
+__Remark__ -- Higher order operations can be constructed from one single opeartors. (Not then And)
 
 | $P$         | $Q$         | $P | Q$ |
 |-------------|-------------|---------|
@@ -79,7 +79,7 @@ $$
 
 ## Predicate Logic
 
-*Definition* -- Predicate is a proposition-valued function of some variables. For example $P(x)$ returns True or False depends on $x$. We can construct a new predicate from given ones. 
+__Definition__ -- Predicate is a proposition-valued function of some variables. For example $P(x)$ returns True or False depends on $x$. We can construct a new predicate from given ones. 
 
 $$
 Q(x, y, z) :\iff P(x) \wedge R(y, z)
@@ -95,13 +95,13 @@ This one means that for all possible value of $x$ the predicate $P(x)$ is true. 
 
 
 
-*Definition* -- Existence Quantification. (There exists an varaible $x$ such that $P(x)$ is true)
+__Definition__ -- Existence Quantification. (There exists an varaible $x$ such that $P(x)$ is true)
 
 $$
 \exists x : P(x) :\iff \forall x : (\neg P(x))
 $$
 
-*Remark* -- Quantification for predicate of more than one variables is possible, 
+__Remark__ -- Quantification for predicate of more than one variables is possible, 
 
 $$
 Q(y) :\iff \forall x  : P (x, y)
@@ -109,7 +109,7 @@ $$
 
 Where $x$ is calledge a bounded variable and $y$ is called free variable. 
 
-*Remark* -- Order of quantifier matters 
+__Remark__ -- Order of quantifier matters 
 
 $$
 \forall x \exists y : P(x, y) \not=  \exists y \forall x : P(x, y)
@@ -119,13 +119,13 @@ $$
 
 ## Axiomatic System/Theory of Proofs 
 
-*Definition* -- Axiomatic system if a finite sequence of propositions or proposition scheme. 
+__Definition__ -- Axiomatic system if a finite sequence of propositions or proposition scheme. 
 $$
 a_1, a_2, ..., a_n
 $$
 which are called axioms. 
 
-*Definition* -- Proof of a proposition $p$ within an axiomatic system is a finite sequence of propositions. 
+__Definition__ -- Proof of a proposition $p$ within an axiomatic system is a finite sequence of propositions. 
 
 $$
 q_1, ..., q_M
@@ -147,7 +147,7 @@ $$
   \exists 1 \le m, n < j : q_m \wedge q_n \implies q_j
 $$
 
-*Remark* -- If $P$ can be proven from an axiomatic system 
+__Remark__ -- If $P$ can be proven from an axiomatic system 
 
 $$
 a_1, a_2, ..., a_n
@@ -159,13 +159,13 @@ $$
 a_1, a_2, ..., a_n \vdash P
 $$
 
-*Remark* -- This definition allows to easily recognized the proof. An altogether difficult matter is to find the proof. 
+__Remark__ -- This definition allows to easily recognized the proof. An altogether difficult matter is to find the proof. 
 
-*Remark* -- Obviously, any tautology shouldn't occur in the axioms. It can be removed from the list of axioms without impairing the system of the axiomatic system. 
+__Remark__ -- Obviously, any tautology shouldn't occur in the axioms. It can be removed from the list of axioms without impairing the system of the axiomatic system. 
 
 *Extreme Case* -- Axiomatic System for propositional logic is an empty sequence.
 
-*Definition* -- An axiomatic system is consistent if there exists a proposition $Q$ which can't be proven from the axioms. 
+__Definition__ -- An axiomatic system is consistent if there exists a proposition $Q$ which can't be proven from the axioms. 
 
 $$
 \neg (a_1, ...., a_n \vdash Q) 

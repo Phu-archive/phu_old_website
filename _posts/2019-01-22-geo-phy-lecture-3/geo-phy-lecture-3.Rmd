@@ -1,0 +1,378 @@
+---
+title: "Geometrical Anatomy of Theoretical Physics Lecture 3"
+description: |
+   Classification of Sets, Construction of of ℕ, ℤ and ℚ 
+author:
+  - name: Phu Sakulwongtana
+    url: https://phutoast.github.io/
+date: 01-22-2019
+output:
+  radix::radix_article:
+    self_contained: false
+    toc: true
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+---
+
+## Classification of Sets
+
+### Maps
+A recurrence theme in mathematics is the study/classification of spaces by means of structure preserving maps between these spaces. A space is usually meant to be same equipped with some structure. 
+
+A map 
+$$
+\phi : A \rightarrow B
+$$
+
+is a relation such that for every $a \in A$ there exists exactly one $b \in B$ such that $\phi(a, b)$
+
+__Notation__ -- 
+
+$$
+\phi : A \rightarrow B \quad \phi (a) :=  b
+$$
+
+We say that 
+
+* $A$ is a domain of $\phi$
+* $B$ is a target of $\phi$
+* Image is defined by 
+
+$$
+\phi(A) \equiv\text{im}_{\phi} (A) := \left\{ \phi(a) \in B | a \in A \right\}
+$$
+
+__Definition__ -- A map 
+
+$$
+\phi: A \rightarrow B 
+$$
+is called 
+
+* Subjective if $\phi(A) = B$
+* Injective if $\phi(a_1) = \phi(a_2) \implies a_1 = a_2$
+* Bijective if the map is both injective and surjective. 
+
+__Definition__ -- Two sets $A$ and $B$ are called (Set-Theoretically) isomorphic 
+
+$$
+A \cong_{\text{set}} B
+$$
+
+If there exists a bijection 
+
+$$
+\phi : A \rightarrow B
+$$
+
+__Remark__ -- If there is any bijection $A \rightarrow B$ then generally there are many. (The intuition for this is that we pair up elements of $A$ and $B$)
+
+### Classification of Set
+
+A set $A$ is 
+
+* Infinite if there exits a propert subset $B$. $B \subsetneqq A$. That is isomorphic to A, $B \cong_{\text{set}} A$
+
+  * $A$ is called countably infinite if $A \cong_{\text{set}} \mathbb{N}$ 
+  * $A$ is called non-countably otherwise 
+
+* Finite, otherwise, or we can say that 
+
+$$
+A \cong_{\text{set}} \{1, 2, ..., N\} \text{ For Some } N \in \mathbb{N}
+$$
+Where we write 
+
+$$
+|A| = N
+$$
+
+__Definition__ - Let a map be $\phi : A \rightarrow B$ be a bijection. Then the inverse of the map is a map $\phi^{-1} : B \rightarrow A$ defined uniquely by 
+
+$$
+\begin{aligned}
+\phi \circ \phi^{-1} &= \text{id}_A \\
+\phi^{-1} \circ \phi &= \text{id}_B
+\end{aligned}
+$$
+Where $\text{id}_M : M \rightarrow M \text{ where } m \mapsto m$
+
+__Definition__ -- Let the map $\phi: A \rightarrow B$ by an map. Then we define the set 
+
+$$
+\text{pre-im}_{\phi} (V) = \{a \in A | \phi(a) \in V\} \text{ where } V \subseteq B
+$$
+
+### Equivalent Relation 
+
+__Definition__ -- Let $M$ be a set and $\sim$ a relation such that 
+
+* It has the property of reflexivity 
+
+$$
+\forall m \in M : m \sim m
+$$
+
+* It has the property of symmetry 
+
+$$
+\forall m, n \in M : m \sim n \iff n \sim m
+$$
+
+* It has the property of transitivity 
+
+$$
+\forall m, n, p \in M : m \sim n \wedge n \sim p \implies m \sim p
+$$
+
+Then $\sim$ is called equilvalent relation on $M$
+
+__Definition__ -- Let $\sim$ be an equivalent relation on $M$. Then for any $m \in M$. We define a set 
+
+$$
+[m] = \{n \in M | m \sim n\} \subseteq M 
+$$
+
+There are 2 key properties 
+
+$$
+a \in [m] \implies [a] = [m]
+$$
+
+and it is either 
+
+$$
+[m] = [n] \text{ or } [m] \cap [n] = \emptyset
+$$
+
+
+__Definition__ -- Let $\sim$ be an equivalent relation on $M$. Define the quotient set 
+
+$$
+M / \sim = \{ [m] \in \mathcal{P}(M) | m \in M \}
+$$
+
+__Remark__ -- Due to the axiom of choice, there exists a complete system of representation for $\sim$ in the set $R$ such that 
+
+$$
+R \cong_{\text{set}} M / \sim 
+$$
+
+__Remark__ -- Care must be taken to define map whose domain is a quotient set and if one uses representative to define the map 
+
+__Example__ -- Suppose 
+
+$$
+M = \mathbb{Z} , \quad m \sim n \iff m-n \in 2\mathbb{Z}
+$$
+
+Then the quotient set would be 
+
+$$
+\mathbb{Z} / \sim = \{[0], [1]\}
+$$
+
+Idea -- On $\mathbb{Z}$ we have addition 
+
+$$
++ : \mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{Z}
+$$
+
+We wish to inherit and addition as 
+
+$$
+\oplus : \mathbb{Z/\sim  \times \ Z /\sim \ \rightarrow \ \mathbb{Z} /\sim }
+$$
+
+Such that 
+
+$$
+[a] \oplus [b] = [a+b]
+$$
+
+Care must be taken precisely because this could be inconsistent, we have to show that, let $a'$ and $b'$, such that 
+
+$$
+[a'] = [a], \ [b'] = [b]
+$$
+
+Then we can see that 
+
+$$
+\begin{aligned}
+[a'] \oplus [b'] &= [a' + b'] = [a-2m + b - 2n] \\
+&= [a + b - 2(m+n)] = [a+b] = [a] \oplus [b]
+\end{aligned}
+$$
+And indeed it is well-defined.
+
+---
+
+## Construction of $\mathbb{N, Z}$ and $\mathbb{ Q }$
+
+### Natural Number $\mathbb{N}$
+
+We would like to establish an addition on $\mathbb{N}$.
+
+<aside>
+This is based on an old definition of $\mathbb{N}$
+</aside>
+
+__Define__ -- Successor Map, such that 
+
+$$
+s : \mathbb{N} \rightarrow \mathbb{N} \quad n \mapsto \{n\}
+$$
+
+For example , 
+
+$$
+s(2) = s(\{\{\emptyset\}\}) = \{\{\{\emptyset\}\}\} = 3
+$$
+
+__Define__ -- Predecessor Map 
+
+$$
+p : \mathbb{N}^* \rightarrow \mathbb{N} \quad n \mapsto m \text{ such that } m \in n
+$$
+
+where $\mathbb{N}^*$ is a natural network that doesn't contain $0$. For example. 
+
+$$
+p(2) = p(\{\{ \emptyset \} \}) = \{\emptyset\} = 1
+$$
+
+__Define__ -- n-th power of $s$ means that 
+
+$$
+s^n = s \circ s^{p(n)} \text{ if } n \in \mathbb{N}^* \quad s^0 = \text{id}
+$$
+
+__Definition__ - Addition is a map 
+
+$$
+\mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N} \quad (m ,n) \mapsto m + n = s^n(m)
+$$
+
+For example, 
+
+$$
+1 + 2 = s^2(1) = s(s(1)) = s(2) = 3 \quad \quad \quad 2 + 1 = s^1(2) = s(2) = 3
+$$
+
+We can show that it is commutative and we can also show that it is associative. 
+
+### Integer Numbers $\mathbb{Q}$
+
+It is defined by 
+$$
+\mathbb{Z = (\mathbb{N} \times \mathbb{N})} / \sim
+$$
+
+Where we define the equivalent relation as 
+
+$$
+(m, n) \sim (p, q) :\iff m+p = p + n
+$$
+
+And we can proof that it is an equivalent relation. The idea is that $(m, n)$ correspond for $m-n$.
+
+__Comparison Between Integer and Natural Number__
+
+$$
+\mathbb{N \not\subseteq Z} \text{ because they have  difference structure}
+$$
+but 
+
+$$
+\mathbb{N \hookrightarrow Z} \quad n \mapsto [(n, 0)]
+$$
+
+__Definition__ -- Negative Number can be described as 
+
+$$
+n \in \mathbb{N} \quad -n = [(0, n)] \in \mathbb{Z}
+$$
+
+__Definition__ -- The addition for the integer numbers is defined by 
+
+$$
++_{\mathbb{Z}} : \mathbb{Z \times Z \rightarrow Z}
+$$
+
+is defined as 
+
+$$
+[(m, n)] +_{\mathbb{Z}} [(p, q)] = [(m + p, n + q)]
+$$
+
+We can show this is well-defined. Let's try adding 2 given numbers 
+
+$$
+2 +{\mathbb{Z}} (-3) = [(2, 0)] +_{\mathbb{Z}} [(0, 3)] = [(2 + 0, 0 + 3)] = [(2, 3)] = -1
+$$
+
+### Rational Numbers
+
+Rational Numbers is defined by 
+
+$$
+\mathbb{Q := (\mathbb{Z} \times \mathbb{Z}^*) / \sim}
+$$
+
+Now the equivalent relation is defined by 
+
+$$
+(x, y) \sim (u, v) :\iff xv = uy
+$$
+
+The idea behind this is that 
+
+$$
+\frac{a}{b} = [(x, y)]
+$$
+
+We can embedded $\mathbb{Z}$ by 
+
+$$
+\mathbb{Z \hookrightarrow Q}  \quad  x \mapsto[(x, 1)]
+$$
+
+__Define__ -- Addition on Rational Number as 
+
+$$
++_{\mathbb{Q}} : \mathbb{Q \times Q \rightarrow Q}  
+$$
+
+where it is defined as 
+
+$$
+[(x, y)] +_{\mathbb{Q}} [(u, v)] =  [(x \cdot v + y \cdot u, y \cdot v)]
+$$
+
+Typical ill-defined addition would be 
+
+$$
+[(x, y)] +_{\mathbb{Q}} [(u, v)] =  [(x + u, y + v)]
+$$
+
+__Define__ -- The multiplication as 
+
+$$
+\cdot_{\mathbb{Q}} : \mathbb{Q \times Q \rightarrow Q}
+$$
+
+where 
+
+$$
+[(x, y)] \cdot_{\mathbb{Q}} [(u, v)] = [(x \cdot u, u \cdot v)]
+$$
+
+```{r, echo=FALSE}
+htmltools::includeHTML("katex.html")
+```

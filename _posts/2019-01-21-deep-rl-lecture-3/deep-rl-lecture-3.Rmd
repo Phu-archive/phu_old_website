@@ -1,0 +1,133 @@
+---
+title: "Deep Reinforcement Learning Lecture 3"
+description: |
+  Policy Gradient 
+author:
+  - name: Phu Sakulwongtana
+    url: https://phutoast.github.io/
+date: 01-21-2019
+output:
+  radix::radix_article:
+    self_contained: false
+    toc: true
+    toc_depth: 2
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objective 
+
+$$
+\theta^* = \arg\max_{\theta} \mathbb{E}_{\tau \sim p_{\theta} (\tau)} \left[\sum_t r(s_t, a_t) \right]
+$$
+
+In this note, we are going to describe/derive policy gradient in the setting of the finite horizon. 
+
+$$
+\theta^* = \arg\max_{\theta} \sum^T_{t=1} \mathbb{E}_{(s_t, a_t) \sim p_{\theta}(s_t, a_t)} [r(s_t, a_t)]
+$$
+
+## Evaluate The Objective 
+
+Can't evalute exanctly, so we have apporximate it using Monte Carlo method. 
+
+$$
+J(\theta) = \mathbb{E}_{\tau \sim p_{\theta}(\tau)} \left[\sum_t r(s_t, a_t) \right] \approx \frac{1}{N} \sum_i\sum_t r(s_{i, t}, a_{i, t})
+$$
+
+Running policy under finte horizon. 
+
+### Direct Policy Differentiation 
+
+Looking at the objective first 
+
+$$
+J(\theta) = \mathbb{E}_{\tau \sim p_{\theta} (\tau)} [r(\tau)] = \int \pi_{\theta} (\tau) r (\tau) \ d\tau
+$$
+
+The derivative is 
+
+$$
+\nabla_{\theta}J(\theta) = \int \nabla_{\theta}\pi_{\theta} (\tau) r(\tau) \ d\tau
+$$
+
+A convenient identity is 
+
+$$
+\pi_{\theta} (\tau) \nabla_{\theta} \log \pi_{\theta}(\tau) = \pi_{\theta}(\tau) \frac{\nabla_{\theta}\pi_{\theta}(\tau)}{\pi_{\theta}\tau} = \nabla_{\theta}\pi_{\theta} (\tau)
+$$
+
+So, the derivative becomes 
+
+$$
+\nabla_{\theta}J(\theta)  = \int \pi_{\theta} \nabla_{\theta} \log \pi_{\theta}(\tau) r(\tau) \ d\tau = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \nabla_{\theta} \log \pi_{\theta}(\tau) r(\tau) \right]
+$$
+
+Looking at the probability of the policy 
+
+$$
+\pi_{\theta}(\tau) = p(s_1) \prod^T_{t=1} \pi_{\theta}(a_t|s_t) p(s_{t+1}|s_t, a_t)
+$$
+
+Getting the logrithm of the policy probability distribution 
+
+$$
+\log \pi_{\theta} (\tau) = \log p(s_1) + \sum^T_{t=1} \log \pi_{\theta}(a_t|s_t) + \log p(s_{t+1} | s_t, a_t)
+$$
+
+When we take the derivative of the log-policy probability distribution, since the other terms are not depending on the parameters. 
+
+$$
+\nabla_{\theta} \log \pi_{\theta}(\tau) = \nabla_{\theta} \sum^T_{t=1} \log \pi_{\theta} (a_t|s_t)
+$$
+
+And therefore the policy gradient is 
+
+$$
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[\sum^T_{t=1} \nabla_{\theta} \log \pi_{\theta} (a_t|s_t) * \sum^T_{t=1} r(s_t, a_t) \right]
+$$
+
+### Evaluate the Policy Gradient
+
+We are using Monte Carlo method by rolling-out a lot of trajectories. 
+
+$$
+\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum^N_{i = 1} \left( \sum^T_{t=1} \nabla_{\theta} \log \pi_{\theta}(a_t|s_t) * \sum^T_{t=1} r(s_t, a_t) \right)
+$$
+
+And we can update the policy using standard gradient ascend. 
+
+$$
+\theta \leftarrow \theta + \alpha \nabla_{\theta} J(\theta)
+$$
+
+__REINFORCE Algorithm__
+```{r fig.cap="REINFORCE Algorithm in Pseudo-Code", layout="l-body"}
+# \begin{algorithm}[H]
+#     \caption{REINFORCE Algorithm}
+#     \begin{algorithmic}[1]
+#         \State Sample $\{\tau^i\}$ from $\pi_{\theta}(a_t|s_t)$
+#         \State Calculate the Gradient  $\nabla_{\theta} J(\theta) \approx \sum_{i} \left( \sum_{t} \nabla_{\theta} \log \pi_{\theta}(a_t|s_t)\right) \left( \sum_{t} r(s_t, a_t) \right)$
+#         \State Update the policy $\theta \leftarrow \theta + \alpha \nabla_{\theta} J(\theta)$
+#     \end{algorithmic}
+# \end{algorithm}
+knitr::include_graphics("Images/Figure1.png")
+```
+
+__Comparison to Maximum Likelihood__ -- This algorithm is similar to maximum likelihood. 
+
+$$
+\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum^N_{i=1} \left( \sum^T_{t=1} \nabla_{\theta} \log \theta_{\theta}(a_{i, t} | s_{i, t}) \right)
+$$
+
+The policy gradient means that 
+
+* Some trajectory will be good, then we will increases the likelihood
+* Some trajectory will be bad, then we will decrease the likelihood. 
+
+```{r, echo=FALSE}
+htmltools::includeHTML("katex.html")
+```
