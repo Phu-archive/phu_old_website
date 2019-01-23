@@ -5,4 +5,5 @@ listing:
   posts:
     - 2019-01-14-deep-rl-lecture-1
     - 2019-01-16-deep-rl-lecture-2
+    - 2019-01-21-deep-rl-lecture-3
 ---

@@ -41,15 +41,16 @@
   <meta property="twitter:description" content="Policy Gradient"/>
   
   <!--/radix_placeholder_meta_tags-->
+  
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Deep Reinforcement Learning Lecture 3"]},{"type":"character","attributes":{},"value":["Policy Gradient \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["01-21-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","bibliography","output"]}},"value":[{"type":"character","attributes":{},"value":["Deep Reinforcement Learning Lecture 3"]},{"type":"character","attributes":{},"value":["Policy Gradient \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["01-21-2019"]},{"type":"character","attributes":{},"value":["biblio.bib"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["deep-rl-lecture-3_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-3_files/distill-2.2.21/template.v2.js","deep-rl-lecture-3_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-3_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","katex.html","katex.min.css","katex.min.js"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","deep-rl-lecture-3_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-3_files/distill-2.2.21/template.v2.js","deep-rl-lecture-3_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-3_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","Images/Figure3.png","Images/Figure4.png","katex.html","katex.min.css","katex.min.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -968,6 +969,7 @@
 <ul>
 <li><a href="#objective">Objective</a></li>
 <li><a href="#evaluate-the-objective">Evaluate The Objective</a></li>
+<li><a href="#what-is-wrong-with-policy-gradient">What is wrong with Policy Gradient ?</a></li>
 </ul>
 </nav>
 <hr class="d-toc-separator"/>
@@ -1036,6 +1038,169 @@ Figure 1: REINFORCE Algorithm in Pseudo-Code
 </p>
 </div>
 </div>
+<p><strong>Comparison to Maximum Likelihood</strong> – This algorithm is similar to maximum likelihood.</p>
+<p><span class="math display">\[
+\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum^N_{i=1} \left( \sum^T_{t=1} \nabla_{\theta} \log \theta_{\theta}(a_{i, t} | s_{i, t}) \right)
+\]</span></p>
+<p>The policy gradient means that</p>
+<ul>
+<li>Some trajectory will be good, then we will increases the likelihood</li>
+<li>Some trajectory will be bad, then we will decrease the likelihood.</li>
+</ul>
+<h3 id="example-with-gaussian-policies">Example with Gaussian Policies</h3>
+<p>The policy should looks like</p>
+<p><span class="math display">\[
+\pi_{\theta}(a_t|s_t) = \mathcal{N}(f_{NN}(s_t);\Sigma)
+\]</span></p>
+<p>The log-policy should now be</p>
+<p><span class="math display">\[
+\log \pi_{\theta}(a_t|s_t) = 0.5 || f(s_t) - a_t ||^2_{\Sigma} + \text{ const}
+\]</span></p>
+<p>And, the derivative would be</p>
+<p><span class="math display">\[
+\nabla_{\theta} \log \pi_{\theta}(a_t | s_t)  = -0.5 \Sigma^{-1} (f(s_t) - a_t) \frac{df}{dt}
+\]</span></p>
+<h3 id="partial-observability">Partial Observability</h3>
+<p>We can simply replace <span class="math inline">\(o_t\)</span> with <span class="math inline">\(s_t\)</span>, but Markov Property isn’t used, so it might not be good here(RNN might mitigate this problem).</p>
+<p><span class="math display">\[
+\nabla_{\theta}J(\theta) \approx \frac{1}{N} \sum^N_{i=1} \left( \sum^T_{t=1} \nabla_{\theta} \log \pi_{\theta} (a_{i, t} | o_{i, t}) * \sum^T_{t=1} r(o_{i, t}, a_{i, t}) \right)
+\]</span></p>
+<hr />
+<h2 id="what-is-wrong-with-policy-gradient">What is wrong with Policy Gradient ?</h2>
+<h3 id="first-problem-high-variance">First Problem (High Variance)</h3>
+<p>Suppose we have the policy and 3 sample from them, there is one that gives very negative result and the rest give small positives, this causes the policy to change quickly.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="Images/Figure2.png" alt="Policy Before/After(dashed-line) Update (Inspired by in-Slide figure)" width="1094" />
+<p class="caption">
+Figure 2: Policy Before/After(dashed-line) Update (Inspired by in-Slide figure)
+</p>
+</div>
+</div>
+<p>However, if we add the constant the graph will be pushed wider.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="Images/Figure3.png" alt="Policy Before/After(dashed-line) Update (Inspired by in-Slide figure)" width="1094" />
+<p class="caption">
+Figure 3: Policy Before/After(dashed-line) Update (Inspired by in-Slide figure)
+</p>
+</div>
+</div>
+<p>What would happend if 2 rewards is zero and the other is negative ? The policy gradient will push the probability distribution depending on where it started.</p>
+<h3 id="second-problem-slow-convergence">Second Problem (Slow Convergence)</h3>
+<p>Suppose a simple policy</p>
+<p><span class="math display">\[
+\log \pi_{\theta} (a_t|s_t) = \frac{1}{2\sigma^2} (ks_t - a_t)^2 + \text{ const }
+\]</span></p>
+<p>where the parameters are <span class="math inline">\(\theta = (k, \sigma)\)</span> and the reward is defined by</p>
+<p><span class="math display">\[
+r(s_t, a_t) = -s_t^2-a^2_t
+\]</span></p>
+<p>where we try to make state close to zero, while making action small, however, according to the policy gradient plot</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="Images/Figure4.png" alt="Normal Policy Plot from [@PETERS2008682]" width="652" />
+<p class="caption">
+Figure 4: Normal Policy Plot from <span class="citation" data-cites="PETERS2008682">(Peters and Schaal <a href="#ref-PETERS2008682">2008</a>)</span>
+</p>
+</div>
+</div>
+<p>You can see that, since we want the action to be small, the system will decrease the <span class="math inline">\(\sigma\)</span>, so we get less big action, which is always a good idea. Although the gradient direction is correct, <span class="math inline">\(\sigma\)</span> component will be too large, so the other component will be slow update.</p>
+<h3 id="reducing-variance">Reducing Variance</h3>
+<p><strong>Causality</strong></p>
+<p>Causality – Policy at time <span class="math inline">\(t&#39;\)</span> can’t affect reward at time <span class="math inline">\(t\)</span>, when</p>
+<p><span class="math display">\[
+t&#39; &gt; t
+\]</span></p>
+<p>So, we can make the reward term to be, reward to go, instead of summing over all rewards.</p>
+<p><span class="math display">\[
+\nabla_{\theta}J(\theta) \approx \frac{1}{N} \sum^N_{i=1} \left( \sum^T_{t=1} \nabla_{\theta} \log \pi_{\theta} (a_{i, t} | s_{i, t}) * \sum^T_{t&#39;=t} r(s_{i, t&#39;}, a_{i, t&#39;}) \right)
+\]</span></p>
+<p>This term is smaller in magnitude, overall gradient is small, so we collect the reward to go <span class="math inline">\(\hat{Q}_{i, t}\)</span>.</p>
+<h3 id="baseline">Baseline</h3>
+<p>Adding constant changes the result, with same multiplier, don’t want just “How good they are compare to others”, but we want “How good they are one average”</p>
+<p><span class="math display">\[
+\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum^N_{i=1} \nabla_{\theta} \log \pi_{\theta}(\tau) [r(\tau) - b]
+\]</span></p>
+<p>where <span class="math inline">\(b\)</span> can be</p>
+<p><span class="math display">\[
+b = \frac{1}{N} \sum^N_{i=1} r(\tau)
+\]</span></p>
+<p>We have to show that this will not give a biased estimate</p>
+<p><span class="math display">\[
+\mathbb{E} [\nabla_{\theta} \log \pi_{\theta}(\tau) b] = \int \pi_{\theta} (\tau) \nabla_{\theta} \log \pi_{\theta}(\tau) b \ d\tau
+\]</span></p>
+<p>This boiled down to</p>
+<p><span class="math display">\[
+\int \nabla_{\theta} \pi_{\theta} (\tau) b \ d\tau = b \nabla_{\theta} \int \pi_{\theta}(\tau) \ d\tau = 0
+\]</span></p>
+<p>So it is unbiased, subtracting b a baseline is unbiased in expectation, however the average reward isn’t the best one.</p>
+<p><strong>Analyzing Variance</strong></p>
+<p>Can we write down the variance, and the finding the lowest varience.</p>
+<p><span class="math display">\[
+\text{Var}[x] = \mathbb{E}[x^2] - \mathbb{E}[x]^2
+\]</span></p>
+<p>Now the gradient is</p>
+<p><span class="math display">\[
+\nabla_{\theta}J(\theta) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \nabla_{\theta} \log\pi_{\theta}(\tau)(r(\tau)  - b) \right]
+\]</span></p>
+<p>So the variance is equal to</p>
+<p><span class="math display">\[
+\text{Var} = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} [(\nabla_{\theta} \log\pi_{\theta}(\tau)(r(\tau) - b))^2] - \underbrace{\mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} [\nabla_{\theta} \log\pi_{\theta}(\theta)(r(\tau) - b) ]^2}_{\text{Unbiased Estimate}}
+\]</span></p>
+<p>The second term is just the normal gradient, so in order to find the lowest term, we find the derivative.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{d\text{Var}}{db} &amp;= \frac{d}{db} \mathbb{E}[g(\tau)^2 (r(\tau) - b)^2] \\
+&amp;= \frac{d}{db} \big( \mathbb{E}[g(\tau)^2r(\tau)^2] - 2 \mathbb{E}[g(\tau)^2r(\tau)b] + b^2\mathbb{E}[g(\tau)^2] \big)
+\end{aligned}
+\]</span></p>
+<p>Which is equal to (and we set it equal to zero)</p>
+<p><span class="math display">\[
+\mathbb{E}[g(\tau)^2r(\tau)] + 2b\mathbb{E}[g(\tau)^2] = 0
+\]</span></p>
+<p>The baseline that gives the lowest variance is equal to</p>
+<p><span class="math display">\[
+b = \frac{\mathbb{E}[g(\tau)^2r(\tau)]}{\mathbb{E}[g(\tau)^2]}
+\]</span></p>
+<p>which is the expected reward weighted by gradient magnitude.</p>
+<h3 id="policy-gradient-is-on-policy">Policy Gradient is On-Policy</h3>
+<p>Since we require to get the trajectory from the current policy only, the policy gradient is on-policy, Neural Network changes a bit with each step, and On-Policy can be inefficient.</p>
+<p><strong>Off Policy and Importance Sampling</strong></p>
+<p>We don’t have to sample from <span class="math inline">\(\pi_{\theta}(\tau)\)</span>. We can use importance sampling, which is</p>
+<p><span class="math display">\[
+\mathbb{E}_{x \sim p(x)} [f(x)] = \int p(x) f(x) \ dx = \int \frac{q(x)}{q(x)} p(x) f(x) \ dx= \mathbb{E}_{x\sim q(x)} \left[ \frac{p(x)}{q(x)} f(x) \right]
+\]</span></p>
+<p>So, we can apply it to the policy objective</p>
+<p><span class="math display">\[
+J(\theta) = \mathbb{E}_{\tau \sim \bar{\pi}(x)} \left[ \frac{\pi_{\theta}(\tau)}{\bar{\pi}(\tau)} r(\tau) \right]
+\]</span></p>
+<p>We can then expand the policies.</p>
+<p><span class="math display">\[
+\frac{\pi_{\theta}(\tau)}{\bar{\pi}(\tau)} = \frac{p(s_1) \prod^T_{t=1} \pi_{\theta}(a_t|s_t) p(s_{t+1} | a_t, s_t)}{p(s_1) \prod^T_{t=1} \bar{\pi}(a_t|s_t) p(s_{t+1}|a_t, s_t)} = \frac{\prod^T_{t=1} \pi_{\theta}(a_t|s_t)}{\prod^T_{t=1} \bar{\pi}_{\theta}(a_t|s_t)}
+\]</span></p>
+<p>The policy gradient with important sampling would be</p>
+<p><span class="math display">\[
+\nabla J(\theta&#39;) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \frac{\pi_{\theta&#39;}(\tau)}{\pi_{\theta}(\tau)} \nabla_{\theta&#39;} \log \pi_{\theta&#39;}(\tau)r(\tau) \right]
+\]</span></p>
+<p>With the <span class="math inline">\(\theta\)</span>s that aren’t the same</p>
+<p><span class="math display">\[
+\nabla J(\theta&#39;) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \left( \prod^T_{t=1} \frac{\pi_{\theta&#39;}(a_t|s_t)}{\pi_{\theta}(a_t|s_t)} \right) \left( \sum^T_{t=1} \nabla_{\theta&#39;}\log\pi_{\theta&#39;}(a_t|s_t) \right) \left(\sum^T_{t=1} r(a_t, s_t) \right)\right]
+\]</span></p>
+<p>We can add causality.</p>
+<p><span class="math display">\[
+\nabla J(\theta&#39;) = \mathbb{E}_{\tau \sim \pi_{\theta}(\tau)} \left[ \sum^T_{t=1} \nabla_{\theta&#39;}\log\pi_{\theta&#39;}(a_t|s_t) 
+\left(\prod^t_{t&#39;=1} \frac{\pi_{\theta&#39;}(a_{t&#39;}|s_{t&#39;})}{\pi_{\theta}(a_{t&#39;}|s_{t&#39;})} \right) \left( \sum^T_{t&#39;=t} r(a_{t&#39;}, s_{t&#39;}) \right) \right]
+\]</span></p>
+<p>The product term above is exponent in <span class="math inline">\(T\)</span>. To <em>fix</em> this, we write the objective differently, by</p>
+<p><span class="math display">\[
+J(\theta) = \sum^T_{t=1} \mathbb{E}_{(s_t, a_t) \sim p_{\theta}(s_t, a_t)}[r(s_t, a_t)] = \sum^T_{t=1} \mathbb{E}_{s_t \sim p_{\theta}(s_t)}[\mathbb{E}_{a_t \sim \pi_{\theta}(a_t | s_t)}[r(s_t, a_t)]]
+\]</span></p>
+<p>We can do normal importance sampling</p>
+<p><span class="math display">\[
+J(\theta&#39;) = \sum^T_{t=1} \mathbb{E}_{s_t \sim p_{\theta}(s_t)}\left[ \cancel{\frac{p_{\theta&#39;}(s_t)}{p_{\theta}(s_t)}} \mathbb{E}_{a_t \sim \pi_{\theta}(a_t, s_t)} \left[ \frac{\pi_{\theta&#39;}(a_t|s_t)}{\pi_{\theta}(a_t|s_t)} r(s_t, a_t) \right] \right]
+\]</span></p>
+<p>We can remove this part(which is really complicated/hard to compute), and the reason will be discussed in future lecture.</p>
 <div class="layout-chunk" data-layout="l-body">
 <!DOCTYPE html>
 <!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
@@ -1059,6 +1224,11 @@ Figure 1: REINFORCE Algorithm in Pseudo-Code
   </body>
 </html>
 </div>
+<div id="refs" class="references">
+<div id="ref-PETERS2008682">
+<p>Peters, Jan, and Stefan Schaal. 2008. “Reinforcement Learning of Motor Skills with Policy Gradients.” <em>Neural Networks</em> 21 (4): 682–97. <a href="https://doi.org/https://doi.org/10.1016/j.neunet.2008.02.003" class="uri">https://doi.org/https://doi.org/10.1016/j.neunet.2008.02.003</a>.</p>
+</div>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -1080,6 +1250,23 @@ Figure 1: REINFORCE Algorithm in Pseudo-Code
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom"></div>
+<script id="distill-bibliography" type="text/bibtex">
+@article{PETERS2008682,
+title = "Reinforcement learning of motor skills with policy gradients",
+journal = "Neural Networks",
+volume = "21",
+number = "4",
+pages = "682 - 697",
+year = "2008",
+note = "Robotics and Neuroscience",
+issn = "0893-6080",
+doi = "https://doi.org/10.1016/j.neunet.2008.02.003",
+url = "http://www.sciencedirect.com/science/article/pii/S0893608008000701",
+author = "Jan Peters and Stefan Schaal",
+keywords = "Reinforcement learning, Policy gradient methods, Natural gradients, Natural Actor-Critic, Motor skills, Motor primitives",
+abstract = "Autonomous learning is one of the hallmarks of human and animal behavior, and understanding the principles of learning will be crucial in order to achieve true autonomy in advanced machines like humanoid robots. In this paper, we examine learning of complex motor skills with human-like limbs. While supervised learning can offer useful tools for bootstrapping behavior, e.g., by learning from demonstration, it is only reinforcement learning that offers a general approach to the final trial-and-error improvement that is needed by each individual acquiring a skill. Neither neurobiological nor machine learning studies have, so far, offered compelling results on how reinforcement learning can be scaled to the high-dimensional continuous state and action spaces of humans or humanoids. Here, we combine two recent research developments on learning motor control in order to achieve this scaling. First, we interpret the idea of modular motor control by means of motor primitives as a suitable way to generate parameterized control policies for reinforcement learning. Second, we combine motor primitives with the theory of stochastic policy gradient learning, which currently seems to be the only feasible framework for reinforcement learning for humanoids. We evaluate different policy gradient methods with a focus on their applicability to parameterized motor primitives. We compare these algorithms in the context of motor primitive learning, and show that our most modern algorithm, the Episodic Natural Actor-Critic outperforms previous algorithms by at least an order of magnitude. We demonstrate the efficiency of this reinforcement learning method in the application of learning to hit a baseball with an anthropomorphic robot arm."
+}
+</script>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->
