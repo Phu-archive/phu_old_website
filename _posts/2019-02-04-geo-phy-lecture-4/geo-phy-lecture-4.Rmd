@@ -1,0 +1,50 @@
+---
+title: "Geometrical Anatomy of Theoretical Physics Lecture 4"
+description: |
+  Topological spaces - Construction and Purpose 
+author:
+  - name: Phu Sakulwongtana
+    url: https://phutoast.github.io/
+date: 02-04-2019
+output:
+  radix::radix_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Topology Definition
+
+__Definition__ -- Let $M$ be some set then a choice 
+
+$$
+\mathcal{O} \subseteq \mathcal{P}(M)
+$$
+if called a topology on $M$ if 
+
+  * Empty Set and $M$ are presented in $\mathcal{O}$
+
+$$
+\emptyset \in \mathcal{O}, M \in \mathcal{O}
+$$
+
+  * The intersection of 2 sets in $\mathcal{O}$ must be in $\mathcal{O}$
+
+$$
+u, v \in \mathcal{O} \implies \bigcap \{u,v\} \in \mathcal{O}
+$$
+ 
+  * The union of subset $\mathcal{O}$ must be in $\mathcal{O}$ 
+  
+$$
+C \subseteq \mathcal{O} \implies \bigcup C \in \mathcal{O}
+$$
+
+
+
+```{r, echo=FALSE}
+htmltools::includeHTML("katex.html")
+```

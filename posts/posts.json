@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-01-24-deep-rl-lecture-4/",
+    "title": "Deep Reinforcement Learning Lecture 4",
+    "description": "Actor Critic",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-01-24",
+    "categories": [],
+    "preview": "posts/2019-01-24-deep-rl-lecture-4/Images/Figure1.png",
+    "last_modified": "2019-02-04T12:20:18+00:00",
+    "preview_width": 1868,
+    "preview_height": 690
+  },
+  {
     "path": "posts/2019-01-22-geo-phy-lecture-3/",
     "title": "Geometrical Anatomy of Theoretical Physics Lecture 3",
     "description": "Classification of Sets, Construction of of ℕ, ℤ and ℚ",
