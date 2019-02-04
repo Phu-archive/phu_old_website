@@ -1,10 +1,43 @@
 ---
 title: "About Me"
 description: |
-  Some additional details about myself, my interest.....
+  Nice to meet you !! 🎉
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+I am Phu Sakulwongtana, from Thailand. Right now, I am second year computer science student at University College London.
+
+I am mainly interested in 
+
+  * Multi-Agent Reinforcement Learning
+  
+    * Theory of Mind 
+    * Emergence of Langauges 
+    
+  * Graph Neural Network
+  
+    * Relational Reasoning 
+    
+  * Meta-Learning
+  * Model-Based
+  * Unsupervised Learing 
+
+In order to apply to __Reinforcement Learning__ in order to improves generalization. I am also interested in related fields (and why I really enjoy doing AI/ML/DL) such as 
+
+  * Game Theory/Mechanism Design
+  * Behavior Economics
+  * Neuroeconomics 
+  * Physics
+  
+    * Statistical Mechanics 
+    * General Relativity (My childhood dream)
+    * Quantum Mechanics 
+    
+  * Neuroscience -- espically __System__ Neuroscience
+  
+Right now, I am adding my olds notes from courses, that I have taken from free couses avaliable in the internet, into this website (also refresh some of memories), and will continue doing it. 
+
+100% of the courses I took (that are not university courses) is freely avaliable online.

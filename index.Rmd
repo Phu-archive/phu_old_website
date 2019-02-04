@@ -7,9 +7,17 @@ site: radix::radix_website
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Radix at:
-# https://rstudio.github.io/radix/website.html
-
 ```
+
+This is the website that keeps my lecture notes that I have taken from courses online, which includes(Bold means present in website/currently adding more): 
+
+  * __Deep Reinforcement Learning__
+  * __Lectures on Geometrical Anatomy of Theoretical Physics by Fredric Schuller__
+  * Game Theory 
+  * Neuronal Dynamics 
+  * Differential Equations 
+  * And More !! 
+  
+It also contains a blog about my research journey and papers (still in development).
+
 
