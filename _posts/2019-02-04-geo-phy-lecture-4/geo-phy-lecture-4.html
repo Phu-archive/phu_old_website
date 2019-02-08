@@ -44,12 +44,12 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Geometrical Anatomy of Theoretical Physics Lecture 4"]},{"type":"character","attributes":{},"value":["Topological spaces - Construction and Purpose \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["02-04-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Geometrical Anatomy of Theoretical Physics Lecture 4"]},{"type":"character","attributes":{},"value":["Topological spaces - Construction and Purpose \n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["02-04-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["geo-phy-lecture-4_files/bowser-1.9.3/bowser.min.js","geo-phy-lecture-4_files/distill-2.2.21/template.v2.js","geo-phy-lecture-4_files/jquery-1.11.3/jquery.min.js","geo-phy-lecture-4_files/webcomponents-2.0.0/webcomponents.js","katex.html","katex.min.css","katex.min.js"]}
+  {"type":"character","attributes":{},"value":["geo-phy-lecture-4_files/bowser-1.9.3/bowser.min.js","geo-phy-lecture-4_files/distill-2.2.21/template.v2.js","geo-phy-lecture-4_files/jquery-1.11.3/jquery.min.js","geo-phy-lecture-4_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","katex.html","katex.min.css","katex.min.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -963,6 +963,16 @@
 </div>
 
 <div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#topology-definition">Topology Definition</a></li>
+<li><a href="#standard-topology">Standard Topology</a></li>
+<li><a href="#constructing-of-new-topologies-from-given-topologies">Constructing of New Topologies from Given Topologies</a></li>
+<li><a href="#convergence-continuity-and-homeomorphism">Convergence, Continuity and Homeomorphism</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
 <h2 id="topology-definition">Topology Definition</h2>
 <p><strong>Definition</strong> – Let <span class="math inline">\(M\)</span> be some set then a choice</p>
 <p><span class="math display">\[
@@ -985,6 +995,231 @@ u, v \in \mathcal{O} \implies \bigcap \{u,v\} \in \mathcal{O}
 </ul>
 <p><span class="math display">\[
 C \subseteq \mathcal{O} \implies \bigcup C \in \mathcal{O}
+\]</span></p>
+<p><strong>Remark</strong> – Unless <span class="math inline">\(|M| = 1\)</span>, there are difference topologies <span class="math inline">\(\mathcal{O}\)</span> one can choose on one and the same set. Example of topologies are</p>
+<ul>
+<li>Let <span class="math inline">\(M\)</span> be any set and lets its topology be (This is called chaotic topology)</li>
+</ul>
+<p><span class="math display">\[
+  \mathcal{O} = \{\emptyset, M\}
+  \]</span> * Let <span class="math inline">\(M\)</span> be any set and let its topology be (This is called discreate topology)</p>
+<p><span class="math display">\[
+\mathcal{O} = \mathcal{P}(M)  
+\]</span></p>
+<hr />
+<h2 id="standard-topology">Standard Topology</h2>
+<h3 id="definition">Definition</h3>
+<p>Important topology – Standard Topology on a set <span class="math inline">\(M\)</span>, which is</p>
+<p><span class="math display">\[
+M = \mathbb{R}^d = \underbrace{\mathbb{R} \times \mathbb{R} \times \cdots \times \mathbb{R}}_{\text{d times}}
+\]</span></p>
+<p>This special topology is written as</p>
+<p><span class="math display">\[
+\mathcal{O}_{\text{Standard } \mathbb{R}^d}
+\]</span></p>
+<p>And it is constructed in 2 steps</p>
+<ol type="1">
+<li>Define an open ball, where</li>
+</ol>
+<p><span class="math display">\[
+\forall x \in \mathbb{R}^d , \forall r \in \mathbb{R}^+ : B_r^{(2n)}  (x) := \left\{ y \in \mathbb{R}^d \Bigg| \sqrt{\sum^d_{i=1}(y^i - x^i)^{2n}}  &lt; r\right\}
+\]</span></p>
+<ol start="2" type="1">
+<li>Define a set (open set) that is an element in the standard topology as</li>
+</ol>
+<p><span class="math display">\[
+\mathcal{U} \in \mathcal{O}_{\text{Standard } \mathbb{R}^d} :\iff \forall p \in \mathcal{U} :\exists r \in \mathbb{R}^+ : B_r(p) \subseteq \mathcal{U}
+\]</span></p>
+<h3 id="proof-that-the-standard-topology-is-indeed-a-topology">Proof that the Standard Topology is indeed a topology</h3>
+<p>We have to check that empty set and <span class="math inline">\(M\)</span> is in the topology</p>
+<p><strong>For empty set</strong></p>
+<p><span class="math display">\[
+\emptyset \in \mathcal{O}_{\text{std}}
+\]</span></p>
+<p>Since the definition of for all, is that</p>
+<p><span class="math display">\[
+\forall p \in \emptyset \iff \forall p : \left(p \in \emptyset \implies \cdots\right)
+\]</span> which will always be true because <span class="math inline">\(p \in \emptyset\)</span> is always false.</p>
+<p><strong>For Set <span class="math inline">\(M\)</span></strong></p>
+<p>It is clear that</p>
+<p><span class="math display">\[
+B_r(x) \subseteq M
+\]</span></p>
+<p><strong>Intersection Rule</strong> Next we have to check that the intersection of 2 sets in <span class="math inline">\(\mathcal{O}\)</span> must be in <span class="math inline">\(\mathcal{O}\)</span>. Consider</p>
+<p><span class="math display">\[
+p \in U \cap V \implies p \in U \text{ and } p \in V
+\]</span></p>
+<p>But, then</p>
+<p><span class="math display">\[
+\exists r \in \mathbb{R}^+ : B_r(p) \subseteq U \text{ and } \exists r&#39; \in \mathbb{R}^+ : B_r(p) \subseteq V
+\]</span></p>
+<p>And, so</p>
+<p><span class="math display">\[
+B_{\min(r, r&#39;)}(p) \subseteq P \text{ and } \subseteq V \implies B_{\min(r, r&#39;)} \subseteq U \cap V
+\]</span></p>
+<p><strong>Union Rule</strong> Finally, We have to check that the union of subset has to be in <span class="math inline">\(\mathcal{O}\)</span>. Let</p>
+<p><span class="math display">\[
+U \in C \subseteq \mathcal{O} \implies \forall p \in U : \exists r \in \mathbb{R}^+ : B_r(p) \subseteq U \subseteq \bigcup C
+\]</span></p>
+<hr />
+<h2 id="constructing-of-new-topologies-from-given-topologies">Constructing of New Topologies from Given Topologies</h2>
+<h3 id="induced-topology">Induced Topology</h3>
+<p><strong>Definition</strong> – Let <span class="math inline">\((M, \mathcal{O})\)</span> be a topological space. Let <span class="math inline">\(N \subseteq M\)</span>. Then</p>
+<p><span class="math display">\[
+\mathcal{O} |_N = \left\{ U \cap N | U \in \mathcal{O}  \right\} \subseteq \mathcal{P}(M)
+\]</span></p>
+<p>is a topology on <span class="math inline">\(N\)</span> called the induced topology. <strong>Proof</strong> that induced topology is indeed a topology.</p>
+<p>Check that an empty set and <span class="math inline">\(N\)</span> is in the topology</p>
+<ol type="1">
+<li>For an empty set</li>
+</ol>
+<p><span class="math display">\[
+\emptyset \in \mathcal{O}|_N \text{ since } \emptyset = \emptyset \cap N
+\]</span></p>
+<ol start="2" type="1">
+<li>For a set <span class="math inline">\(N\)</span></li>
+</ol>
+<p><span class="math display">\[
+N \in \mathcal{O} |_N \text{ since } N = M \cap N
+\]</span></p>
+<p>and <span class="math inline">\(M\)</span> is already in the original topology. Check for intersection of 2 sets in the induced topology is in the topology</p>
+<p><span class="math display">\[
+\exists U \in \mathcal{O} : S = U \cap N \text{ and } \exists V \in \mathcal{O} : T = V \cap N
+\]</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+S \cap T = (U \cap N) \cap (V \cap N) = \underbrace{(U \cap V)}_{\in \mathcal{O}} \cap N
+\]</span></p>
+<p>Same argument applies to unions.</p>
+<p><strong>Example of Induced Topology</strong> – Given a topology</p>
+<p><span class="math display">\[
+(\mathbb{R}, \mathcal{O}_{\text{standard}})
+\]</span></p>
+<p>Let a set <span class="math inline">\(N\)</span> be</p>
+<p><span class="math display">\[
+N = [-1, 1] = \{x \in \mathbb{R} | -1 \le x \le 1\}
+\]</span></p>
+<p>Then the induced topology be</p>
+<p><span class="math display">\[
+(N, \mathcal{O}_{\text{st}} |_N)
+\]</span></p>
+<p>We claim that</p>
+<p><span class="math display">\[
+(0, 1] \not\in \mathcal{O}_{\text{st}} \text{ but } (0, 1] \in \mathcal{O}_{\text{st}} |_N
+\]</span></p>
+<p>because</p>
+<p><span class="math display">\[
+(0, 1] = (0, 2) \cap [-1, 1]
+\]</span></p>
+<h3 id="openness-closeness">Openness &amp; Closeness</h3>
+<p><strong>Definition</strong> – Let <span class="math inline">\((M, \mathcal{O})\)</span> be a topological space. Then <span class="math inline">\(C \subseteq M\)</span> is called closed if</p>
+<p><span class="math display">\[
+M \backslash C 
+\]</span></p>
+<p>is open. <strong>Example</strong> – <span class="math inline">\([0, 1]\)</span> is cloded in</p>
+<p><span class="math display">\[
+(\mathbb{R}, \mathcal{O}_{\text{st}})
+\]</span></p>
+<p>because</p>
+<p><span class="math display">\[
+\mathbb{R} \backslash [0, 1] = \underbrace{(-\infty, 0) \cup (1, \infty)}_{\text{in } \mathcal{O}_{\text{st}}}
+\]</span></p>
+<p><strong>Common Pitfalls</strong> – In general a subset of a topological space can be open and closed and vice versa.</p>
+<p><strong>Observation</strong> – For any topological space</p>
+<p><span class="math display">\[
+(M, \mathcal{O})
+\]</span></p>
+<p>The empty set <span class="math inline">\(\emptyset = M \backslash M\)</span> is both open and close, while a set <span class="math inline">\(M = M \backslash \emptyset\)</span> is also open and close.</p>
+<p><strong>Real Life Example</strong> – Consider a set</p>
+<p><span class="math display">\[
+S^1 = \left\{ (x, y) \in \mathbb{R}^2 \Big | x^2 + y^2 = 1 \right\}
+\]</span></p>
+<p>One wat to establish a topology on <span class="math inline">\(S\)</span> is to let</p>
+<p><span class="math display">\[
+\mathcal{O} = \mathcal{O}_{\text{standard } \mathbb{R}^2}  |_{S^1}
+\]</span></p>
+<p>Another way is define <span class="math inline">\(S^1\)</span> as</p>
+<p><span class="math display">\[
+S^1 = \mathbb{R} / \sim \text{ where } x \sim y \iff y = x + 2\pi
+\]</span></p>
+<h3 id="product-topology">Product Topology</h3>
+<p><strong>Definition</strong> – Let 2 topological spaces be</p>
+<p><span class="math display">\[
+(A, \mathcal{O}_A) \text{ and } (B, \mathcal{O}_B)
+\]</span></p>
+<p>Equip <span class="math inline">\(A \times B\)</span> with so-called product topology</p>
+<p><span class="math display">\[
+\mathcal{O}_{A \times B}
+\]</span></p>
+<p>Defined implicitly by</p>
+<p><span class="math display">\[
+U \in \mathcal{O}_{A \times B} \iff \forall p \in U : \exists S \in \mathcal{O}_A , T \in \mathcal{O}_B : S \times T \subseteq U
+\]</span></p>
+<p>This can be visualized as</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<img src="Images/Figure1.png" alt="Product Topology According to definition" width="817" />
+<p class="caption">
+Figure 1: Product Topology According to definition
+</p>
+</div>
+</div>
+<hr />
+<h2 id="convergence-continuity-and-homeomorphism">Convergence, Continuity and Homeomorphism</h2>
+<h3 id="convergence">Convergence</h3>
+<p><strong>Definition</strong> – A sequence <span class="math inline">\(q\)</span> (a map)</p>
+<p><span class="math display">\[
+q : \mathbb{N} \rightarrow M
+\]</span></p>
+<p>on a topological space. <span class="math inline">\((M, \mathcal{O})\)</span> is said to converge again a limit point <span class="math inline">\(a \in M\)</span> if</p>
+<p><span class="math display">\[
+\underbrace{\forall \mathcal{U \in O} \text{ and } a \in \mathcal{U}}_{\text{open neighbbourhood of } a} : \exists N \in \mathbb{N} : \forall n &gt; N : q(n) \in \mathcal{U}
+\]</span></p>
+<p><strong>Example</strong></p>
+<p>The topological space</p>
+<p><span class="math display">\[
+(M , \{\emptyset, M\})
+\]</span></p>
+<p>Claim – Any sequence converge againts every point(only <span class="math inline">\(M\)</span> contains <span class="math inline">\(a\)</span>). The topological space</p>
+<p><span class="math display">\[
+(M = \mathbb{R}^d, \mathcal{O}_{\text{standard}})
+\]</span></p>
+<p><strong>Theorem</strong> – The point converge against a point <span class="math inline">\(a\)</span> if</p>
+<p><span class="math display">\[
+\forall \epsilon &gt; 0 : \exists N \in \mathbb{N} : \forall n &gt; N : ||q(n) - a|| &lt; \epsilon
+\]</span></p>
+<h3 id="continuity">Continuity</h3>
+<p><strong>Definition</strong> – Let</p>
+<p><span class="math display">\[
+(M, \mathcal{O}_M) \text{ and } (N, \mathcal{O}_N)
+\]</span></p>
+<p>be a topological space, and let</p>
+<p><span class="math display">\[
+\phi : M \rightarrow N
+\]</span></p>
+<p>a map. Then <span class="math inline">\(\phi\)</span> is called continuous if</p>
+<p><span class="math display">\[
+\forall V \in \mathcal{O} : \text{pre-im}_{\phi} (V) \in \mathcal{O}_M
+\]</span></p>
+<p><strong>Example</strong> – Any map is continuous for</p>
+<p><span class="math display">\[
+(M, \mathcal{P}(M)) \text{ and } (N, \{\emptyset, N\})
+\]</span></p>
+<p>For standard topology, it recovers standard definition of continuity.</p>
+<h3 id="homeomorphism">Homeomorphism</h3>
+<p><strong>Definition</strong> – Let</p>
+<p><span class="math display">\[
+\phi : M \rightarrow N
+\]</span></p>
+<p>be a bijection. Now equipping</p>
+<p><span class="math display">\[
+(M, \mathcal{O}_M) \text{ and } (N, \mathcal{O}_N)
+\]</span></p>
+<p>we call <span class="math inline">\(\phi\)</span> a homeomorphism if both the map and its inverse are continuous.</p>
+<p><strong>Remark</strong> – Homeomorphism are the structure preserving maps in topology.</p>
+<p><strong>Definition</strong> – If there exists homeomorphism then it provides a one-to-one pairing of the open set of M with those of N. In case of homeomorphism</p>
+<p><span class="math display">\[
+(M, \mathcal{O}_M) \cong_{\text{topo}} (N, \mathcal{O}_N) \implies M \cong_{\text{set}} N
 \]</span></p>
 <div class="layout-chunk" data-layout="l-body">
 <!DOCTYPE html>
