@@ -7,6 +7,7 @@ listing:
     - 2019-01-21-geo-phy-lecture-2
     - 2019-01-22-geo-phy-lecture-3
     - 2019-02-04-geo-phy-lecture-4
+    - 2019-02-09-geo-phy-lecture-5
 ---
 
 

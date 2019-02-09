@@ -34,6 +34,23 @@
     "preview_height": 986
   },
   {
+    "path": "posts/2019-02-09-geo-phy-lecture-5/",
+    "title": "Geometrical Anatomy of Theoretical Physics Lecture 5",
+    "description": "Topological Properties, Homotopic Curves & Fundamental Group",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-02-09",
+    "categories": [],
+    "preview": "posts/2019-02-09-geo-phy-lecture-5/Images/Figure1.png",
+    "last_modified": "2019-02-09T21:52:52+00:00",
+    "preview_width": 2053,
+    "preview_height": 530
+  },
+  {
     "path": "posts/2019-02-04-geo-phy-lecture-4/",
     "title": "Geometrical Anatomy of Theoretical Physics Lecture 4",
     "description": "Topological spaces - Construction and Purpose",

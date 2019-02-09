@@ -9,7 +9,8 @@ date: 02-09-2019
 output:
   radix::radix_article:
     self_contained: false
-draft: true
+    toc: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -161,7 +162,7 @@ $$
 (M, \mathcal{O}_M)
 $$
 
-is called paracompact if every open-cover has an open refinement that is locally finite. 
+is called paracompact if every open-cover $C$ has an open refinement $\tilde{C}$ that is locally finite. 
 
 __Definition__ -- Open Refinement is an open-cover such that 
 
@@ -232,6 +233,297 @@ __Theorem__ -- Let
 
 $$
 (M , \mathcal{O})
+$$
+
+Be Hausdorff topological space. Then it is paracompact if and only if every open cover admits a partition of unity subordinate to that cover. 
+
+__Definition__ -- Partition of unity is a set $F$ of continuous function. 
+
+$$
+f \in \mathcal{F} : M \rightarrow [0, 1]
+$$
+
+where $[0, 1]$ is induced topology from real line such that 
+
+  1. For Every function $f$ in the set 
+  
+$$
+\exists \mathcal{U} \in C : f(p)\ne 0 \implies p \in \mathcal{U}
+$$
+  2. For all points in set $M$. There exists an open neighborhood 
+  
+$$
+V \text{ where } p \in V \text{ and } V \in \mathcal{O}
+$$
+such that only finitely many function are non-zero on V 
+
+$$
+\sum^N_{n=1}f_n = 1
+$$
+
+---
+
+## Connectedness
+
+__Definition__ -- A topological space 
+
+$$
+(M, \mathcal{O}_M)
+$$
+
+is called connected, unless there exists 2 non-empty, non-intersecting open set $A$ and $B$ such that 
+
+$$
+M = A \cup B
+$$
+
+
+__Example__ -- The topology isn't connnected because 
+
+$$
+(\mathbb{R} \backslash 0, \mathcal{O}_{\text{st}} |_{\mathbb{R} \backslash 0 })
+$$
+
+because we can find $A$ and $B$ which are 
+
+$$
+A = (-\infty, 0) \text{ and } B = (0, \infty)
+$$
+__Theorem__ -- $[0, 1]$ is connected. 
+
+__Theorem__ -- A topological space 
+
+$$
+(M, \mathcal{O})
+$$
+
+is connected if and only if 
+
+$$
+\emptyset, M
+$$
+
+are only subset that are both open and closed. 
+
+__Proof__ 
+
+Forward Implication -- Proof by contradiction. Suppose there is another 
+
+$$
+\mathcal{U} \subseteq M
+$$
+
+That is open and closed at the same time, then 
+
+$$
+M = \mathcal{U} \cup (M \backslash \mathcal{U})
+$$
+
+and Hense $M$ isn't connected 
+
+Backward Implication -- Suppose M isn't connected. Then there exists non-empty, non-intersecting $A$ and $B$ such that 
+
+$$
+M = A \cup B = A \cup (M \backslash A)
+$$
+
+and we just show that A is closed and open. 
+
+__Definition__ -- The topological space 
+
+$$
+(M, \mathcal{O})
+$$
+
+is called path connected if for every pairs of points $p, q \in M$, There exists a continuous curve 
+
+$$
+\gamma : [0, 1] \rightarrow M
+$$
+
+such that 
+
+$$
+\gamma (0) = p \text{ and } \gamma(1) = q
+$$
+
+__Example__ -- The topological space 
+
+$$
+(\mathbb{R}^d, \mathcal{O}_{\text{Standard}}) 
+$$
+
+is path connected. Proof by define a curve 
+
+$$
+\gamma(\lambda) = p + \lambda(p -q)
+$$
+
+__Theorem__ -- Path connected implies that it is connected 
+
+__Proof__ -- We proof by contradiction, suppose 
+
+$$
+(M, \mathcal{O}_M)
+$$
+
+is a path connected without being connect. Then there exists non-empty, non-intersecting open set $A$ and $B$ such that
+
+$$
+M = A \cup B
+$$
+
+Choose a point $a$ and $b$ in $A$ and $B$. Since the topological space is path connected, there exists a continuous curves 
+
+$$
+\gamma : [0, 1] \rightarrow M \text{ such that } \gamma(0) = a, \gamma(1) = b
+$$
+
+Then we can see that 
+
+$$
+[0, 1] = \text{pre-im}_{\gamma} (M) = \text{pre-im}_{\gamma}(A \cup B) = \underbrace{\text{pre-im}_{\gamma}(A)}_{\text{Open Non-Empty}} \cup \underbrace{\text{pre-im}_{\gamma}(B)}_{\text{Open Non-Empty}}
+$$
+
+Then $[0, 1]$ is not connected (Which is not correct). 
+
+---
+
+## Homotopic Curves 
+
+__Definition__ -- 2 Curves 
+
+$$
+\gamma : [0, 1] \rightarrow M \text{ and } \delta : [0, 1] \rightarrow M \text{ where } \gamma(0) = \delta(0) \text{ and } \gamma(1) = \delta(1)
+$$
+Where 
+
+$$
+(M, \mathcal{O})
+$$
+
+is a topological space. They are called homotopic if there exists a continuous map 
+
+$$
+h : [0, 1] \times [0, 1] \rightarrow M
+$$
+
+such that 
+
+$$
+h(0, \lambda) = \gamma(\lambda) \text{ and } h(1, \lambda) = \delta(\gamma) , \lambda \in [0, 1]
+$$
+
+For example,
+
+```{r fig.cap="Diagram example", layout="l-body-outset"}
+knitr::include_graphics("Images/Figure2.png")
+
+```
+
+Where the example can be 
+
+$$
+h(0.5, \cdot)
+$$
+
+Homotopic is an equivalent relation. 
+
+__Definition__ -- Let 
+
+$$
+(M, \mathcal{O}) 
+$$
+
+be a topological space. Then for every point $M$ define a space of loops at point p as 
+
+$$
+\mathcal{L}_p = \left\{ \gamma : [0, 1] \rightarrow M | \gamma \text{ continuous }, \gamma(0) = \gamma(1) \right\}
+$$
+
+__Definition__ -- Let an operator be 
+
+$$
+*_p : \mathcal{L}_p \times \mathcal{L}_P \rightarrow \mathcal{L}_p
+$$
+
+for $\lambda$ be an interval $[0, 1]$ be 
+
+$$
+(\gamma * \delta)(\lambda) = \begin{cases} \gamma(2\lambda) &\text{for } 0 \le \lambda < \frac{1}{2} \\ \delta(2\lambda -1) &\text{for } \frac{1}{2} \le\lambda < 1 \end{cases}
+$$
+
+We call it concatenation. 
+
+### Fundamental Group 
+
+The fundamental group 
+
+$$
+(\pi_{1_p}, \cdot )
+$$
+
+of a topological space is the set 
+
+$$
+\pi_{1_p} = \mathcal{L}_p / \sim(\text{homotopy}) = \{[\gamma] | \gamma \in \mathcal{L}_p\}
+$$
+
+Together with a map 
+
+$$
+\cdot : \pi_{1_p} \times \pi_{1_p} \rightarrow \pi_{1_p}
+$$
+
+be 
+
+$$
+[\gamma] \cdot [\delta] = [\gamma * \delta]
+$$
+
+And it 
+
+* is Associative 
+* has identity as 
+
+$$
+\gamma_{\text{id}, p} : [0, 1] \rightarrow M \quad \gamma(\lambda) = p
+$$
+
+* The inverse is when running backward.
+
+__Example__ 
+
+* $S^2$ is a sphere where all the loops are homotopic 
+
+$$
+\pi_1 = \{[\gamma_{\text{id}, p}]\}
+$$
+
+* $T^2$ be a torus, where it is the same as, where there are 2 "types" of loop that can be looped around the shape.
+
+$$
+T^2 = S^2 \times S^2
+$$
+
+
+
+* $C$ is a tube, where there are arbitrary number of loops wrapped around the shape.
+
+$$
+C = \mathbb{R} \times S^1
+$$
+
+we can see that (if we "count" the number of times a path is wrapped around), we can see that 
+
+$$
+(\pi_1, \cdot ) \cong_{\text{group}} (\mathbb{Z}, +)
+$$
+
+meaning that there is a bijection 
+
+$$
+f : \pi_1 \rightarrow \mathbb{Z} \text{ and } f(\alpha \cdot \beta) = f(\alpha) + f(\beta)
 $$
 
 

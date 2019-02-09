@@ -44,12 +44,12 @@
   <!--radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","draft"]}},"value":[{"type":"character","attributes":{},"value":["Geometrical Anatomy of Theoretical Physics Lecture 5"]},{"type":"character","attributes":{},"value":["Topological Properties, Homotopic Curves & Fundamental Group\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["02-09-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"logical","attributes":{},"value":[true]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Geometrical Anatomy of Theoretical Physics Lecture 5"]},{"type":"character","attributes":{},"value":["Topological Properties, Homotopic Curves & Fundamental Group\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Phu Sakulwongtana"]},{"type":"character","attributes":{},"value":["https://phutoast.github.io/"]}]}]},{"type":"character","attributes":{},"value":["02-09-2019"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["radix::radix_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["geo-phy-lecture-5_files/bowser-1.9.3/bowser.min.js","geo-phy-lecture-5_files/distill-2.2.21/template.v2.js","geo-phy-lecture-5_files/jquery-1.11.3/jquery.min.js","geo-phy-lecture-5_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","katex.html","katex.min.css","katex.min.js"]}
+  {"type":"character","attributes":{},"value":["geo-phy-lecture-5_files/bowser-1.9.3/bowser.min.js","geo-phy-lecture-5_files/distill-2.2.21/template.v2.js","geo-phy-lecture-5_files/jquery-1.11.3/jquery.min.js","geo-phy-lecture-5_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","katex.html","katex.min.css","katex.min.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -963,6 +963,16 @@
 </div>
 
 <div class="d-article">
+<h3 class="d-toc-header">Table of Contents</h3>
+<nav class="d-toc" id="TOC">
+<ul>
+<li><a href="#seperation-properties">Seperation Properties</a></li>
+<li><a href="#compactness-para-compactness">Compactness &amp; Para-Compactness</a></li>
+<li><a href="#connectedness">Connectedness</a></li>
+<li><a href="#homotopic-curves">Homotopic Curves</a></li>
+</ul>
+</nav>
+<hr class="d-toc-separator"/>
 <h2 id="seperation-properties">Seperation Properties</h2>
 <p><strong>Definition</strong> – Topological Space</p>
 <p><span class="math display">\[
@@ -1063,7 +1073,7 @@ We can construct a cover that has not finite sub-covers. where if you can’t ta
 <p><span class="math display">\[
 (M, \mathcal{O}_M)
 \]</span></p>
-<p>is called paracompact if every open-cover has an open refinement that is locally finite.</p>
+<p>is called paracompact if every open-cover <span class="math inline">\(C\)</span> has an open refinement <span class="math inline">\(\tilde{C}\)</span> that is locally finite.</p>
 <p><strong>Definition</strong> – Open Refinement is an open-cover such that</p>
 <p><span class="math display">\[
 \forall \mathcal{U} \in C : \exists \tilde{\mathcal{U}} \in \tilde{C} : \tilde{\mathcal{U}} \subseteq \mathcal{U}
@@ -1109,6 +1119,207 @@ L = w_1 \times [0, 1) \text{ where } w \text{ is no countable set.}
 <p><strong>Theorem</strong> – Let</p>
 <p><span class="math display">\[
 (M , \mathcal{O})
+\]</span></p>
+<p>Be Hausdorff topological space. Then it is paracompact if and only if every open cover admits a partition of unity subordinate to that cover.</p>
+<p><strong>Definition</strong> – Partition of unity is a set <span class="math inline">\(F\)</span> of continuous function.</p>
+<p><span class="math display">\[
+f \in \mathcal{F} : M \rightarrow [0, 1]
+\]</span></p>
+<p>where <span class="math inline">\([0, 1]\)</span> is induced topology from real line such that</p>
+<ol type="1">
+<li>For Every function <span class="math inline">\(f\)</span> in the set</li>
+</ol>
+<p><span class="math display">\[
+\exists \mathcal{U} \in C : f(p)\ne 0 \implies p \in \mathcal{U}
+\]</span> 2. For all points in set <span class="math inline">\(M\)</span>. There exists an open neighborhood</p>
+<p><span class="math display">\[
+V \text{ where } p \in V \text{ and } V \in \mathcal{O}
+\]</span> such that only finitely many function are non-zero on V</p>
+<p><span class="math display">\[
+\sum^N_{n=1}f_n = 1
+\]</span></p>
+<hr />
+<h2 id="connectedness">Connectedness</h2>
+<p><strong>Definition</strong> – A topological space</p>
+<p><span class="math display">\[
+(M, \mathcal{O}_M)
+\]</span></p>
+<p>is called connected, unless there exists 2 non-empty, non-intersecting open set <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> such that</p>
+<p><span class="math display">\[
+M = A \cup B
+\]</span></p>
+<p><strong>Example</strong> – The topology isn’t connnected because</p>
+<p><span class="math display">\[
+(\mathbb{R} \backslash 0, \mathcal{O}_{\text{st}} |_{\mathbb{R} \backslash 0 })
+\]</span></p>
+<p>because we can find <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> which are</p>
+<p><span class="math display">\[
+A = (-\infty, 0) \text{ and } B = (0, \infty)
+\]</span> <strong>Theorem</strong> – <span class="math inline">\([0, 1]\)</span> is connected.</p>
+<p><strong>Theorem</strong> – A topological space</p>
+<p><span class="math display">\[
+(M, \mathcal{O})
+\]</span></p>
+<p>is connected if and only if</p>
+<p><span class="math display">\[
+\emptyset, M
+\]</span></p>
+<p>are only subset that are both open and closed.</p>
+<p><strong>Proof</strong></p>
+<p>Forward Implication – Proof by contradiction. Suppose there is another</p>
+<p><span class="math display">\[
+\mathcal{U} \subseteq M
+\]</span></p>
+<p>That is open and closed at the same time, then</p>
+<p><span class="math display">\[
+M = \mathcal{U} \cup (M \backslash \mathcal{U})
+\]</span></p>
+<p>and Hense <span class="math inline">\(M\)</span> isn’t connected</p>
+<p>Backward Implication – Suppose M isn’t connected. Then there exists non-empty, non-intersecting <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> such that</p>
+<p><span class="math display">\[
+M = A \cup B = A \cup (M \backslash A)
+\]</span></p>
+<p>and we just show that A is closed and open.</p>
+<p><strong>Definition</strong> – The topological space</p>
+<p><span class="math display">\[
+(M, \mathcal{O})
+\]</span></p>
+<p>is called path connected if for every pairs of points <span class="math inline">\(p, q \in M\)</span>, There exists a continuous curve</p>
+<p><span class="math display">\[
+\gamma : [0, 1] \rightarrow M
+\]</span></p>
+<p>such that</p>
+<p><span class="math display">\[
+\gamma (0) = p \text{ and } \gamma(1) = q
+\]</span></p>
+<p><strong>Example</strong> – The topological space</p>
+<p><span class="math display">\[
+(\mathbb{R}^d, \mathcal{O}_{\text{Standard}}) 
+\]</span></p>
+<p>is path connected. Proof by define a curve</p>
+<p><span class="math display">\[
+\gamma(\lambda) = p + \lambda(p -q)
+\]</span></p>
+<p><strong>Theorem</strong> – Path connected implies that it is connected</p>
+<p><strong>Proof</strong> – We proof by contradiction, suppose</p>
+<p><span class="math display">\[
+(M, \mathcal{O}_M)
+\]</span></p>
+<p>is a path connected without being connect. Then there exists non-empty, non-intersecting open set <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> such that</p>
+<p><span class="math display">\[
+M = A \cup B
+\]</span></p>
+<p>Choose a point <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. Since the topological space is path connected, there exists a continuous curves</p>
+<p><span class="math display">\[
+\gamma : [0, 1] \rightarrow M \text{ such that } \gamma(0) = a, \gamma(1) = b
+\]</span></p>
+<p>Then we can see that</p>
+<p><span class="math display">\[
+[0, 1] = \text{pre-im}_{\gamma} (M) = \text{pre-im}_{\gamma}(A \cup B) = \underbrace{\text{pre-im}_{\gamma}(A)}_{\text{Open Non-Empty}} \cup \underbrace{\text{pre-im}_{\gamma}(B)}_{\text{Open Non-Empty}}
+\]</span></p>
+<p>Then <span class="math inline">\([0, 1]\)</span> is not connected (Which is not correct).</p>
+<hr />
+<h2 id="homotopic-curves">Homotopic Curves</h2>
+<p><strong>Definition</strong> – 2 Curves</p>
+<p><span class="math display">\[
+\gamma : [0, 1] \rightarrow M \text{ and } \delta : [0, 1] \rightarrow M \text{ where } \gamma(0) = \delta(0) \text{ and } \gamma(1) = \delta(1)
+\]</span> Where</p>
+<p><span class="math display">\[
+(M, \mathcal{O})
+\]</span></p>
+<p>is a topological space. They are called homotopic if there exists a continuous map</p>
+<p><span class="math display">\[
+h : [0, 1] \times [0, 1] \rightarrow M
+\]</span></p>
+<p>such that</p>
+<p><span class="math display">\[
+h(0, \lambda) = \gamma(\lambda) \text{ and } h(1, \lambda) = \delta(\gamma) , \lambda \in [0, 1]
+\]</span></p>
+<p>For example,</p>
+<div class="layout-chunk" data-layout="l-body-outset">
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="Images/Figure2.png" alt="Diagram example" width="721" />
+<p class="caption">
+Figure 2: Diagram example
+</p>
+</div>
+</div>
+<p>Where the example can be</p>
+<p><span class="math display">\[
+h(0.5, \cdot)
+\]</span></p>
+<p>Homotopic is an equivalent relation.</p>
+<p><strong>Definition</strong> – Let</p>
+<p><span class="math display">\[
+(M, \mathcal{O}) 
+\]</span></p>
+<p>be a topological space. Then for every point <span class="math inline">\(M\)</span> define a space of loops at point p as</p>
+<p><span class="math display">\[
+\mathcal{L}_p = \left\{ \gamma : [0, 1] \rightarrow M | \gamma \text{ continuous }, \gamma(0) = \gamma(1) \right\}
+\]</span></p>
+<p><strong>Definition</strong> – Let an operator be</p>
+<p><span class="math display">\[
+*_p : \mathcal{L}_p \times \mathcal{L}_P \rightarrow \mathcal{L}_p
+\]</span></p>
+<p>for <span class="math inline">\(\lambda\)</span> be an interval <span class="math inline">\([0, 1]\)</span> be</p>
+<p><span class="math display">\[
+(\gamma * \delta)(\lambda) = \begin{cases} \gamma(2\lambda) &amp;\text{for } 0 \le \lambda &lt; \frac{1}{2} \\ \delta(2\lambda -1) &amp;\text{for } \frac{1}{2} \le\lambda &lt; 1 \end{cases}
+\]</span></p>
+<p>We call it concatenation.</p>
+<h3 id="fundamental-group">Fundamental Group</h3>
+<p>The fundamental group</p>
+<p><span class="math display">\[
+(\pi_{1_p}, \cdot )
+\]</span></p>
+<p>of a topological space is the set</p>
+<p><span class="math display">\[
+\pi_{1_p} = \mathcal{L}_p / \sim(\text{homotopy}) = \{[\gamma] | \gamma \in \mathcal{L}_p\}
+\]</span></p>
+<p>Together with a map</p>
+<p><span class="math display">\[
+\cdot : \pi_{1_p} \times \pi_{1_p} \rightarrow \pi_{1_p}
+\]</span></p>
+<p>be</p>
+<p><span class="math display">\[
+[\gamma] \cdot [\delta] = [\gamma * \delta]
+\]</span></p>
+<p>And it</p>
+<ul>
+<li>is Associative</li>
+<li>has identity as</li>
+</ul>
+<p><span class="math display">\[
+\gamma_{\text{id}, p} : [0, 1] \rightarrow M \quad \gamma(\lambda) = p
+\]</span></p>
+<ul>
+<li>The inverse is when running backward.</li>
+</ul>
+<p><strong>Example</strong></p>
+<ul>
+<li><span class="math inline">\(S^2\)</span> is a sphere where all the loops are homotopic</li>
+</ul>
+<p><span class="math display">\[
+\pi_1 = \{[\gamma_{\text{id}, p}]\}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(T^2\)</span> be a torus, where it is the same as, where there are 2 “types” of loop that can be looped around the shape.</li>
+</ul>
+<p><span class="math display">\[
+T^2 = S^2 \times S^2
+\]</span></p>
+<ul>
+<li><span class="math inline">\(C\)</span> is a tube, where there are arbitrary number of loops wrapped around the shape.</li>
+</ul>
+<p><span class="math display">\[
+C = \mathbb{R} \times S^1
+\]</span></p>
+<p>we can see that (if we “count” the number of times a path is wrapped around), we can see that</p>
+<p><span class="math display">\[
+(\pi_1, \cdot ) \cong_{\text{group}} (\mathbb{Z}, +)
+\]</span></p>
+<p>meaning that there is a bijection</p>
+<p><span class="math display">\[
+f : \pi_1 \rightarrow \mathbb{Z} \text{ and } f(\alpha \cdot \beta) = f(\alpha) + f(\beta)
 \]</span></p>
 <div class="layout-chunk" data-layout="l-body">
 <!DOCTYPE html>
