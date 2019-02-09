@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>http://phutoast.github.io/about.html</loc>
-    <lastmod>2019-02-04T12:54:41+00:00</lastmod>
+    <lastmod>2019-02-09T10:38:49+00:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/blog.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>http://phutoast.github.io/DeepRL.html</loc>
-    <lastmod>2019-02-04T12:20:59+00:00</lastmod>
+    <lastmod>2019-02-09T10:39:10+00:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/GeoPhy.html</loc>
@@ -23,6 +23,10 @@
   <url>
     <loc>http://phutoast.github.io/notes.html</loc>
     <lastmod>2019-01-14T14:33:09+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://phutoast.github.io/posts/2019-02-09-deep-rl-lecture-5/</loc>
+    <lastmod>2019-02-09T10:40:26+00:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/posts/2019-02-04-geo-phy-lecture-4/</loc>

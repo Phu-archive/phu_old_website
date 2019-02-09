@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-02-09-deep-rl-lecture-5/",
+    "title": "Deep Reinforcement Learning Lecture 5",
+    "description": "Value Function Methods",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-02-09",
+    "categories": [],
+    "preview": "posts/2019-02-09-deep-rl-lecture-5/Images/Figure1.png",
+    "last_modified": "2019-02-09T10:40:26+00:00",
+    "preview_width": 1310,
+    "preview_height": 290
+  },
+  {
     "path": "posts/2019-02-04-geo-phy-lecture-4/",
     "title": "Geometrical Anatomy of Theoretical Physics Lecture 4",
     "description": "Topological spaces - Construction and Purpose",

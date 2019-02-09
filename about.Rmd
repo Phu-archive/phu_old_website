@@ -36,7 +36,7 @@ In order to apply to __Reinforcement Learning__ in order to improves generalizat
     * General Relativity (My childhood dream)
     * Quantum Mechanics 
     
-  * Neuroscience -- espically __System__ Neuroscience
+  * Neuroscience -- espiecialy __System__ Neuroscience
   
 Right now, I am adding my olds notes from courses, that I have taken from free couses avaliable in the internet, into this website (also refresh some of memories), and will continue doing it. 
 
