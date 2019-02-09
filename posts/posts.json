@@ -17,6 +17,23 @@
     "preview_height": 290
   },
   {
+    "path": "posts/2019-02-09-deep-rl-lecture-6/",
+    "title": "Deep Reinforcement Learning Lecture 6",
+    "description": "Advanced Q-learning algorithms",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-02-09",
+    "categories": [],
+    "preview": "posts/2019-02-09-deep-rl-lecture-6/Images/Figure1.png",
+    "last_modified": "2019-02-09T19:23:33+00:00",
+    "preview_width": 2360,
+    "preview_height": 986
+  },
+  {
     "path": "posts/2019-02-04-geo-phy-lecture-4/",
     "title": "Geometrical Anatomy of Theoretical Physics Lecture 4",
     "description": "Topological spaces - Construction and Purpose",
