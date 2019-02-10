@@ -418,7 +418,6 @@ For example,
 
 ```{r fig.cap="Diagram example", layout="l-body-outset"}
 knitr::include_graphics("Images/Figure2.png")
-
 ```
 
 Where the example can be 

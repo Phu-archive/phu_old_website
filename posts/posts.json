@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2019-02-10-geo-phy-lecture-6/",
+    "title": "Geometrical Anatomy of Theoretical Physics Lecture 6",
+    "description": "Topological manifolds and manifold bundles",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-02-10",
+    "categories": [],
+    "preview": "posts/2019-02-10-geo-phy-lecture-6/Images/Figure1.png",
+    "last_modified": "2019-02-10T09:39:02+00:00",
+    "preview_width": 1442,
+    "preview_height": 877
+  },
+  {
     "path": "posts/2019-02-09-deep-rl-lecture-5/",
     "title": "Deep Reinforcement Learning Lecture 5",
     "description": "Value Function Methods",
