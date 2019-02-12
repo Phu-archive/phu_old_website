@@ -17,6 +17,23 @@
     "preview_height": 744
   },
   {
+    "path": "posts/2019-02-12-getting-start-with-deep-learning-project/",
+    "title": "Getting Start with Tensorflow Eager Execution 🔥🔥🔥",
+    "description": "A list of useful snippets for kick-starting a deep learning project. (Fire means still active)",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-02-12",
+    "categories": [],
+    "preview": "posts/2019-02-12-getting-start-with-deep-learning-project/Images/code0.png",
+    "last_modified": "2019-02-12T19:10:46+00:00",
+    "preview_width": 692,
+    "preview_height": 450
+  },
+  {
     "path": "posts/2019-02-10-deep-rl-lecture-7/",
     "title": "Deep Reinforcement Learning Lecture 7",
     "description": "Optimal Control and Planning",
