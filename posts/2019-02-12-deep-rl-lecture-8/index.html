@@ -67,7 +67,7 @@
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["biblio.bib","deep-rl-lecture-8_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-8_files/distill-2.2.21/template.v2.js","deep-rl-lecture-8_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-8_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","Images/Figure3.png","Images/Figure4.png","Images/Figure5.png","Images/Figure6.png","katex.html","katex.min.css","katex.min.js"]}
+  {"type":"character","attributes":{},"value":["biblio.bib","deep-rl-lecture-8_files/bowser-1.9.3/bowser.min.js","deep-rl-lecture-8_files/distill-2.2.21/template.v2.js","deep-rl-lecture-8_files/jquery-1.11.3/jquery.min.js","deep-rl-lecture-8_files/webcomponents-2.0.0/webcomponents.js","Images/Figure1.png","Images/Figure2.png","Images/Figure3.png","Images/Figure4.png","Images/Figure5.5.png","Images/Figure5.png","Images/Figure6.png","katex.html","katex.min.css","katex.min.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 
@@ -1457,6 +1457,14 @@ Figure 5: Version 2.0
 <hr />
 <h2 id="case-study---model-based-policy-search-with-gaussian-process6301026">Case Study - Model Based Policy Search with Gaussian Process<span class="citation" data-cites="6301026">(Durrant-Whyte, Roy, and Abbeel <a href="#ref-6301026">2012</a>)</span></h2>
 <p>The overview of the algorithm is</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<img src="Images/Figure5.5.png" alt="Model Based Policy search with GP(Inspired from In-Slide Figure)" width="506" />
+<p class="caption">
+Figure 6: Model Based Policy search with GP(Inspired from In-Slide Figure)
+</p>
+</div>
+</div>
 <p>The hard part should be at the third step, where given <span class="math inline">\(p(s_t)\)</span>. We use <span class="math inline">\(p(s&#39;|s, a)\)</span>. To compute</p>
 <p><span class="math display">\[
 p(s_{t+1})
@@ -1503,10 +1511,10 @@ p(s_{t+1})
 \]</span></p>
 <p>Idea – Just fit derivatives around current trajectory or policy.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="figure"><span id="fig:unnamed-chunk-6"></span>
+<div class="figure"><span id="fig:unnamed-chunk-7"></span>
 <img src="Images/Figure6.png" alt="Process of Training Controller(Inspired from In-Slide Figure)" width="578" />
 <p class="caption">
-Figure 6: Process of Training Controller(Inspired from In-Slide Figure)
+Figure 7: Process of Training Controller(Inspired from In-Slide Figure)
 </p>
 </div>
 </div>

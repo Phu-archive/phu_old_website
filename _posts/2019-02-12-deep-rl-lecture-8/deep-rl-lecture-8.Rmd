@@ -199,6 +199,29 @@ knitr::include_graphics("Images/Figure5.png")
 
 The overview of the algorithm is 
 
+```{r fig.cap="Model Based Policy search with GP(Inspired from In-Slide Figure)"}
+knitr::include_graphics("Images/Figure5.5.png")
+# \begin{algorithm}[H]
+#     \caption{Model Based Policy Search with Gaussian Process}
+#     \begin{algorithmic}[1]
+#         \State Run Base Policy $\pi_0(s_t|a_t)$ to collect the dataset.
+#         $$
+#         \mathcal{D} = \{(s_t, a_t,s_t')\}
+#         $$
+#         \State Learn Gaussian Process model $p(s'|s, a)$ to maximize
+#         $$
+#         \sum_i \log p(s'_i|s_i, a_i)
+#         $$
+#         \State Back-propagate through $p(s'|s, a)$ into the policy to optimize the policy
+#         \State Run the policy and Append the transition
+#         $$
+#         \{(s_t, a_t, s_t')\}
+#         $$
+#         to the dataset.
+#     \end{algorithmic}
+# \end{algorithm}
+```
+
 The hard part should be at the third step, where given $p(s_t)$. We use $p(s'|s, a)$. To compute 
 
 $$
