@@ -6,7 +6,7 @@
   </url>
   <url>
     <loc>http://phutoast.github.io/blog.html</loc>
-    <lastmod>2019-02-12T19:06:25+00:00</lastmod>
+    <lastmod>2019-02-12T19:33:06+00:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/DeepRL.html</loc>
@@ -31,6 +31,10 @@
   <url>
     <loc>http://phutoast.github.io/posts/2019-02-12-getting-start-with-deep-learning-project/</loc>
     <lastmod>2019-02-12T19:10:46+00:00</lastmod>
+  </url>
+  <url>
+    <loc>http://phutoast.github.io/posts/2019-02-12-understanding-dqn/</loc>
+    <lastmod>2019-02-12T19:32:23+00:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/posts/2019-02-10-deep-rl-lecture-7/</loc>

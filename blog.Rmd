@@ -4,4 +4,5 @@ site: radix::radix_website
 listing: 
   posts:
     - 2019-02-12-getting-start-with-deep-learning-project
+    - 2019-02-12-understanding-dqn
 ---
