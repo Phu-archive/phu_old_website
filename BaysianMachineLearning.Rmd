@@ -1,0 +1,7 @@
+---
+title: "Baysian Methods for Machine Learning"
+site: radix::radix_website
+listing:
+  posts:
+    - 2019-02-18-bay-ml-lecture-1
+---

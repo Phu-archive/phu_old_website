@@ -1,5 +1,20 @@
 [
   {
+    "path": "posts/2019-02-18-algo-game-lecture-1/",
+    "title": "Algo Game lecture 1",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Phu Sakulwongtana",
+        "url": "https://phutoast.github.io/"
+      }
+    ],
+    "date": "2019-02-18",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-02-18T18:00:59+00:00"
+  },
+  {
     "path": "posts/2019-02-12-deep-rl-lecture-8/",
     "title": "Deep Reinforcement Learning Lecture 8",
     "description": "Learning Dynamical Systems From Data",

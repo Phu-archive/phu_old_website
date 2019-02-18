@@ -10,21 +10,27 @@ output: radix::radix_article
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Machine Learning / Deep Learning 
+## Machine Learning / Deep Learning
 
 
-### Deep Reinforcement Learning 
-Deep Reinforcement Learning course([CS 294](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/index.html)) offers at UC Berkeley: [Note](DeepRL.html). 
+### Deep Reinforcement Learning
+Deep Reinforcement Learning course([CS 294](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/index.html)) offers at UC Berkeley: [Note](DeepRL.html).
+
+### Baysian Methods For Machine Learning
+Machine Learning [course](https://www.coursera.org/learn/bayesian-methods-in-machine-learning) : [Note](BaysianMachineLearning.html).
 
 
-## Mathematics 
+## Mathematics
 
 
-### Geometrical Anatomy of Theoretical Physics 
+### Geometrical Anatomy of Theoretical Physics
 Geometrical Anatomy of Theoretical Physics by [Fredric Schuller](https://www.youtube.com/playlist?list=PLPH7f_7ZlzxTi6kS4vCmv4ZKm9u8g5yic): [Note](GeoPhy.html)
- 
+
 
 _Disclaimer_ -- Might contain some errors, and will always be subjected to changes (because I am really new to this)
 
+
+### Algorithmic Game Theory
+Algorithmic Game Theory course([CS364A](http://timroughgarden.org/f13/f13.html)) by Tim Roughgarden: [Note](AlgorithmicGameTheory.html).
 
 ---

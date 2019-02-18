@@ -1,0 +1,21 @@
+---
+title: "Algorithmic Game Theory"
+description: |
+  Overview of the Course Materials
+author:
+  - name: Phu Sakulwongtana
+    url: https://phutoast.github.io/
+date: 02-18-2019
+output:
+  radix::radix_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Radix is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Radix at <https://rstudio.github.io/radix>.
