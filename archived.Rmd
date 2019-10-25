@@ -1,0 +1,14 @@
+---
+title: "Archived Courses"
+description: |
+  Courses I have added some notes. I considered upgrading the content to make them better. 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Deep Reinforcement Learning course([CS 294](http://rail.eecs.berkeley.edu/deeprlcourse-fa17/index.html)) offers at UC Berkeley: [Note](DeepRL.html).
+
+
+Geometrical Anatomy of Theoretical Physics by [Fredric Schuller](https://www.youtube.com/playlist?list=PLPH7f_7ZlzxTi6kS4vCmv4ZKm9u8g5yic): [Note](GeoPhy.html)

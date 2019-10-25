@@ -9,15 +9,6 @@ site: radix::radix_website
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-This is the website that keeps my lecture notes that I have taken from courses online, which includes(Bold means present in website/currently adding more): 
-
-  * __Deep Reinforcement Learning__
-  * __Lectures on Geometrical Anatomy of Theoretical Physics by Fredric Schuller__
-  * Game Theory 
-  * Neuronal Dynamics 
-  * Differential Equations 
-  * And More !! 
-  
-It also contains a blog about my research journey and papers (still in development).
+This is the website that keeps my lecture notes that I have taken from courses online + blog about my research journey and papers.
 
 

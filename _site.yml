@@ -20,6 +20,8 @@ navbar:
       href: blog.html
     - text: "CV"
       href: CV.pdf
+    - text: "Archived"
+      href: archived.html
     - icon: fab fa-github
       href: https://github.com/phutoast
 output: radix::radix_article
