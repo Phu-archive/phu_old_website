@@ -1,20 +1,5 @@
 [
   {
-    "path": "posts/2019-02-18-algo-game-lecture-1/",
-    "title": "Algo Game lecture 1",
-    "description": "A short description of the post.",
-    "author": [
-      {
-        "name": "Phu Sakulwongtana",
-        "url": "https://phutoast.github.io/"
-      }
-    ],
-    "date": "2019-02-18",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2019-02-18T18:00:59+00:00"
-  },
-  {
     "path": "posts/2019-02-12-deep-rl-lecture-8/",
     "title": "Deep Reinforcement Learning Lecture 8",
     "description": "Learning Dynamical Systems From Data",
@@ -47,21 +32,6 @@
     "last_modified": "2019-02-12T19:10:46+00:00",
     "preview_width": 692,
     "preview_height": 450
-  },
-  {
-    "path": "posts/2019-02-12-understanding-dqn/",
-    "title": "Understanding DQN 🔥🤖🤖 (WIP)",
-    "description": "Survay of Q-Learning, mostly DQN algorithm and its variance. (Fire means still active and Robot means work in progress)",
-    "author": [
-      {
-        "name": "Phu Sakulwongtana",
-        "url": "https://phutoast.github.io/"
-      }
-    ],
-    "date": "2019-02-12",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2019-02-12T19:32:23+00:00"
   },
   {
     "path": "posts/2019-02-10-deep-rl-lecture-7/",

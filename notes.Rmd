@@ -27,10 +27,6 @@ Machine Learning [course](https://www.coursera.org/learn/bayesian-methods-in-mac
 Geometrical Anatomy of Theoretical Physics by [Fredric Schuller](https://www.youtube.com/playlist?list=PLPH7f_7ZlzxTi6kS4vCmv4ZKm9u8g5yic): [Note](GeoPhy.html)
 
 
-_Disclaimer_ -- Might contain some errors, and will always be subjected to changes (because I am really new to this)
-
-
-### Algorithmic Game Theory
-Algorithmic Game Theory course([CS364A](http://timroughgarden.org/f13/f13.html)) by Tim Roughgarden: [Note](AlgorithmicGameTheory.html).
+_Disclaimer_ -- Currently added 6 lectures. I have halted this project because I want to step back and consider the current content.
 
 ---

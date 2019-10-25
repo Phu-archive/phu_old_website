@@ -2,11 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>http://phutoast.github.io/about.html</loc>
-    <lastmod>2019-02-09T10:38:49+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://phutoast.github.io/AlgorithmicGameTheory.html</loc>
-    <lastmod>2019-02-18T18:08:38+00:00</lastmod>
+    <lastmod>2019-10-25T17:17:13+01:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/BaysianMachineLearning.html</loc>
@@ -14,7 +10,7 @@
   </url>
   <url>
     <loc>http://phutoast.github.io/blog.html</loc>
-    <lastmod>2019-02-12T19:33:06+00:00</lastmod>
+    <lastmod>2019-10-25T17:17:47+01:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/DeepRL.html</loc>
@@ -30,11 +26,7 @@
   </url>
   <url>
     <loc>http://phutoast.github.io/notes.html</loc>
-    <lastmod>2019-02-18T18:07:04+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://phutoast.github.io/posts/2019-02-18-algo-game-lecture-1/</loc>
-    <lastmod>2019-02-18T18:00:59+00:00</lastmod>
+    <lastmod>2019-10-25T17:22:21+01:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/posts/2019-02-12-deep-rl-lecture-8/</loc>
@@ -43,10 +35,6 @@
   <url>
     <loc>http://phutoast.github.io/posts/2019-02-12-getting-start-with-deep-learning-project/</loc>
     <lastmod>2019-02-12T19:10:46+00:00</lastmod>
-  </url>
-  <url>
-    <loc>http://phutoast.github.io/posts/2019-02-12-understanding-dqn/</loc>
-    <lastmod>2019-02-12T19:32:23+00:00</lastmod>
   </url>
   <url>
     <loc>http://phutoast.github.io/posts/2019-02-10-deep-rl-lecture-7/</loc>
